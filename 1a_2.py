@@ -4,7 +4,10 @@ from sklearn.model_selection import KFold, train_test_split
 from util import scale, plot_acc, plot_loss, plot_accs, TimeHistory, plot_time
 import numpy as np
 import matplotlib.pyplot as plt
-from tqdm import tqdm
+import wandb
+from wandb.keras import WandbCallback
+
+wandb.init(project="nndl_assignment_1")
 
 NUM_CLASSES = 3
 
@@ -37,7 +40,8 @@ AVG_TRAIN_ACCS = []
 AVG_VAL_ACCS = []
 AVG_TIMES = []
 
-for batch_size in tqdm(BATCH_SIZES):
+for hp_i, batch_size in enumerate(BATCH_SIZES):
+    print('hp_i:\n', hp_i)
     # get average scoring for each hyperparameter to optimize towards
     val_accs = []
     train_accs = []
@@ -70,7 +74,7 @@ for batch_size in tqdm(BATCH_SIZES):
                             verbose = 2,
                             batch_size=batch_size,
                             validation_data=(X_val, y_val),
-                            callbacks=[time_callback])
+                            callbacks=[time_callback, WandbCallback()])
 
         train_accs.append(history.history['accuracy'])
         val_accs.append(history.history['val_accuracy'])
@@ -95,25 +99,26 @@ plot_accs(AVG_VAL_ACCS, 'val_accs', 'epochs vs val_accs', 'batch_size', BATCH_SI
 plot_time(AVG_TIMES, 'avg_time', 'batch_size vs avg_time per epoch', 'batch_size', BATCH_SIZES)
 
 ################################## TEST #######################################
-OPTIM_BATCH_SIZE = 32
-X_train = scale(X_train, np.min(X_train, axis=0), np.max(X_train, axis=0))
-model = keras.Sequential([
-            keras.layers.Dense(num_neurons, activation='relu', kernel_regularizer=keras.regularizers.l2(10e-6),
-                            bias_regularizer=keras.regularizers.l2(10e-6)),
-            keras.layers.Dense(NUM_CLASSES) # softmax not needed as loss specifies from_logits
-        ])
+# OPTIM_BATCH_SIZE = 32
+# X_train = scale(X_train, np.min(X_train, axis=0), np.max(X_train, axis=0))
+# model = keras.Sequential([
+#             keras.layers.Dense(num_neurons, activation='relu', kernel_regularizer=keras.regularizers.l2(10e-6),
+#                             bias_regularizer=keras.regularizers.l2(10e-6)),
+#             keras.layers.Dense(NUM_CLASSES) # softmax not needed as loss specifies from_logits
+#         ])
 
-model.compile(optimizer='sgd',
-                    loss=keras.losses.SparseCategoricalCrossentropy(from_logits=True),
-                    metrics=['accuracy', keras.metrics.SparseCategoricalCrossentropy(from_logits=True)])
+# model.compile(optimizer='sgd',
+#                     loss=keras.losses.SparseCategoricalCrossentropy(from_logits=True),
+#                     metrics=['accuracy', keras.metrics.SparseCategoricalCrossentropy(from_logits=True)])
 
-# fit to full training set now
-history = model.fit(X_train, y_train,
-                            epochs=epochs,
-                            verbose = 2,
-                            batch_size=batch_size,
-                            validation_data=(X_test, y_test),
-                            callbacks=[time_callback])
+# # fit to full training set now
+# history = model.fit(X_train, y_train,
+#                             epochs=epochs,
+#                             verbose = 2,
+#                             batch_size=batch_size,
+#                             validation_data=(X_test, y_test),
+#                             callbacks=[time_callback])
 
-plot_acc(history.history, 'full_test_train_acc', 'epochs vs train_acc')
+# plot_acc(history.history, 'full_test_train_acc', 'epochs vs train_acc')
+# plot_loss(history.history, 'full_test_train_loss', 'epochs vs loss')
 ################################# END TEST #####################################
