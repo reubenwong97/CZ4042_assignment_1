@@ -33,12 +33,14 @@ X_test = scale(X_test, np.min(X_test, axis=0), np.max(X_test, axis=0))
 kf = KFold(n_splits=5, random_state=seed, shuffle=False)
 kf.get_n_splits(X_train)
 
+AVG_TRAIN_ACCS = []
 AVG_VAL_ACCS = []
 AVG_TIMES = []
 
 for batch_size in tqdm(BATCH_SIZES):
     # get average scoring for each hyperparameter to optimize towards
     val_accs = []
+    train_accs = []
     times = []
     for train_idx, val_idx in kf.split(X_train):
         time_callback = TimeHistory()
@@ -69,17 +71,25 @@ for batch_size in tqdm(BATCH_SIZES):
                             validation_data=(X_val, y_val),
                             callbacks=[time_callback])
 
+        train_accs.append(history.history['accuracy'])
         val_accs.append(history.history['val_accuracy'])
         times.append(time_callback.times[0])
 
+        train_accs.clear()
+        val_accs.clear()
+        times.clear()
+
+    AVG_TRAIN_ACCS.append(np.mean(np.stack(train_accs, axis=0), axis=0))
     AVG_VAL_ACCS.append(np.mean(np.stack(val_accs, axis=0), axis=0))
     AVG_TIMES.append(np.mean(times))
 
     #! IDEA: collect the val data from fit -> stack over CV runs -> take mean -> plot
 
+np.save('./data/1a_2/train_accs.npy', AVG_TRAIN_ACCS)
 np.save('./data/1a_2/val_accs.npy', AVG_VAL_ACCS)
 np.save('./data/1a_2/avg_time_1_epoch.npy', AVG_TIMES)
 
+plot_accs(AVG_TRAIN_ACCS, 'train_accs', 'epochs vs train_accs', 'batch_size', BATCH_SIZES, train=True)
 plot_accs(AVG_VAL_ACCS, 'val_accs', 'epochs vs val_accs', 'batch_size', BATCH_SIZES, train=False)
 plot_time(AVG_TIMES, 'avg_time', 'batch_size vs avg_time per epoch', 'batch_size', BATCH_SIZES)
 
