@@ -63,8 +63,9 @@ for batch_size in tqdm(BATCH_SIZES):
                     loss=keras.losses.SparseCategoricalCrossentropy(from_logits=True),
                     metrics=['accuracy', keras.metrics.SparseCategoricalCrossentropy(from_logits=True)])
 
-    # train the model
-        history = model.fit(X_train, y_train,
+        # train the model
+        #! FIT TO CV TRAIN SET
+        history = model.fit(X_train_, y_train_,
                             epochs=epochs,
                             verbose = 2,
                             batch_size=batch_size,
@@ -93,7 +94,26 @@ plot_accs(AVG_TRAIN_ACCS, 'train_accs', 'epochs vs train_accs', 'batch_size', BA
 plot_accs(AVG_VAL_ACCS, 'val_accs', 'epochs vs val_accs', 'batch_size', BATCH_SIZES, train=False)
 plot_time(AVG_TIMES, 'avg_time', 'batch_size vs avg_time per epoch', 'batch_size', BATCH_SIZES)
 
-# plot learning curves
-# plot_acc(histories['starter'].history, 'starter_acc', title='epochs vs starter model accuracy')
-# plot_loss(histories['starter'].history, 'starer_loss', loss='sparse_categorical_crossentropy', 
-#     title='epochs vs starter model crossentropy')
+################################## TEST #######################################
+OPTIM_BATCH_SIZE = 32
+X_train = scale(X_train, np.min(X_train, axis=0), np.max(X_train, axis=0))
+model = keras.Sequential([
+            keras.layers.Dense(num_neurons, activation='relu', kernel_regularizer=keras.regularizers.l2(10e-6),
+                            bias_regularizer=keras.regularizers.l2(10e-6)),
+            keras.layers.Dense(NUM_CLASSES) # softmax not needed as loss specifies from_logits
+        ])
+
+model.compile(optimizer='sgd',
+                    loss=keras.losses.SparseCategoricalCrossentropy(from_logits=True),
+                    metrics=['accuracy', keras.metrics.SparseCategoricalCrossentropy(from_logits=True)])
+
+# fit to full training set now
+history = model.fit(X_train, y_train,
+                            epochs=epochs,
+                            verbose = 2,
+                            batch_size=batch_size,
+                            validation_data=(X_test, y_test),
+                            callbacks=[time_callback])
+
+plot_acc(history.history, 'full_test_train_acc', 'epochs vs train_acc')
+################################# END TEST #####################################
