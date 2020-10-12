@@ -5,7 +5,8 @@
 import tensorflow as tf
 from tensorflow import keras
 from sklearn.model_selection import KFold, train_test_split
-from util import scale, plot_acc, plot_loss
+from util.plots import plot_acc, plot_loss
+from util.scaler import scale
 import numpy as np
 import matplotlib.pyplot as plt
 

@@ -1,7 +1,9 @@
 import tensorflow as tf
 from tensorflow import keras
 from sklearn.model_selection import KFold, train_test_split
-from util import scale, plot_acc, plot_loss, plot_accs, TimeHistory, plot_time
+from util.plots import plot_acc, plot_loss, plot_accs, plot_time
+from util.scaler import scale
+from util.callbacks import TimeHistory
 import numpy as np
 import matplotlib.pyplot as plt
 import wandb
@@ -74,15 +76,11 @@ for hp_i, batch_size in enumerate(BATCH_SIZES):
                             verbose = 2,
                             batch_size=batch_size,
                             validation_data=(X_val, y_val),
-                            callbacks=[time_callback, WandbCallback()])
+                            callbacks=[time_callback, WandbCallback(log_weights=True)])
 
         train_accs.append(history.history['accuracy'])
         val_accs.append(history.history['val_accuracy'])
         times.append(time_callback.times[0])
-
-        train_accs.clear()
-        val_accs.clear()
-        times.clear()
 
     AVG_TRAIN_ACCS.append(np.mean(np.stack(train_accs, axis=0), axis=0))
     AVG_VAL_ACCS.append(np.mean(np.stack(val_accs, axis=0), axis=0))

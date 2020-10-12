@@ -1,20 +1,5 @@
 import matplotlib.pyplot as plt
 import seaborn as sns
-import time
-from tensorflow import keras
-
-# for timing epochs
-class TimeHistory(keras.callbacks.Callback):
-    def on_train_begin(self, logs={}):
-        self.times = []
-    def on_epoch_begin(self, epoch, logs={}):
-        self.epoch_time_start = time.time()
-    def on_epoch_end(self, epoch, logs={}):
-        self.times.append(time.time() - self.epoch_time_start)
-
-# scale data
-def scale(X, X_min, X_max):
-    return (X - X_min)/(X_max-X_min)
 
 def plot_time(time, name, title, hp_name, hyper_parameters, path=None):
     fig = plt.figure()
