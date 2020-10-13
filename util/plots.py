@@ -53,3 +53,18 @@ def plot_loss(history, name, loss, title, with_val=True , path=None):
         fig.savefig(path + name)
     else:
         fig.savefig('./figures/' + name)
+
+def compare_models(history_1, history_2, which_compare, model_1_name, model_2_name, plot_name, title, with_test=True, path=None):
+    fig = plt.figure()
+    plt.plot(history_1[which_compare], label=model_1_name+'_train_'+which_compare)
+    plt.plot(history_2[which_compare], label=model_2_name+'_train_'+which_compare)
+    # reasoning behind naming is because model comparison done on test
+    if with_test:
+        plt.plot(history_1['val_'+which_compare], label=model_1_name+'_test_'+which_compare)
+        plt.plot(history_2['val_'+which_compare], label=model_2_name+'_test_'+which_compare)
+    plt.ylabel(which_compare)
+    plt.xlabel('epochs')
+    plt.title(title)
+    plt.legend(loc='lower right')
+    
+    fig.savefig(path+plot_name) if path else fig.savefig('./figures/'+plot_name)

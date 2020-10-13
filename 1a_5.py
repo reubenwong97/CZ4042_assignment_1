@@ -1,7 +1,7 @@
 import tensorflow as tf
 from tensorflow import keras
 from sklearn.model_selection import KFold, train_test_split
-from util.plots import plot_acc, plot_loss, plot_accs, plot_time
+from util.plots import plot_acc, plot_loss, plot_accs, plot_time, compare_models
 from util.scaler import scale
 from util.callbacks import TimeHistory
 import numpy as np
@@ -37,7 +37,7 @@ X_test = scale(X_test, np.min(X_test, axis=0), np.max(X_test, axis=0))
 
 ################################# TEST #######################################
 X_train = scale(X_train, np.min(X_train, axis=0), np.max(X_train, axis=0))
-model = keras.Sequential([
+model_4 = keras.Sequential([
             keras.layers.Dense(num_neurons, activation='relu', kernel_regularizer=keras.regularizers.l2(weight_decay),
                             bias_regularizer=keras.regularizers.l2(weight_decay)),
             keras.layers.Dense(num_neurons, activation='relu', kernel_regularizer=keras.regularizers.l2(weight_decay),
@@ -45,18 +45,38 @@ model = keras.Sequential([
             keras.layers.Dense(NUM_CLASSES) # softmax not needed as loss specifies from_logits
         ])
 
-model.compile(optimizer='sgd',
+model_4.compile(optimizer='sgd',
                     loss=keras.losses.SparseCategoricalCrossentropy(from_logits=True),
                     metrics=['accuracy', keras.metrics.SparseCategoricalCrossentropy(from_logits=True)])
 
 # fit to full training set now
-history = model.fit(X_train, y_train,
+history_4 = model_4.fit(X_train, y_train,
                             epochs=epochs,
                             verbose = 2,
                             batch_size=batch_size,
                             validation_data=(X_test, y_test),
                             callbacks=[WandbCallback()])
 
-plot_acc(history.history, 'full_test_train_acc', 'epochs vs train_acc', path='./figures/1a_5/')
-plot_loss(history.history, 'full_test_train_loss', 'sparse_categorical_crossentropy','epochs vs loss', path='./figures/1a_5/')
+plot_acc(history_4.history, 'full_test_train_acc', 'epochs vs train_acc', path='./figures/1a_5/')
+plot_loss(history_4.history, 'full_test_train_loss', 'sparse_categorical_crossentropy','epochs vs loss', path='./figures/1a_5/')
+
+# 3 layer optimum model
+model_3 = keras.Sequential([
+            keras.layers.Dense(20, activation='relu', kernel_regularizer=keras.regularizers.l2(10e-6),
+                            bias_regularizer=keras.regularizers.l2(10e-6)),
+            keras.layers.Dense(NUM_CLASSES)
+])
+model_3.compile(optimizer='sgd',
+                    loss=keras.losses.SparseCategoricalCrossentropy(from_logits=True),
+                    metrics=['accuracy', keras.metrics.SparseCategoricalCrossentropy(from_logits=True)])
+
+history_3 = model_3.fit(X_train, y_train,
+                            epochs=epochs,
+                            verbose = 2,
+                            batch_size=batch_size,
+                            validation_data=(X_test, y_test),
+                            callbacks=[WandbCallback()])
+
+compare_models(history_3, history_4, 'accuracy', '3_layer', '4_layer', 'compare_3_4_layer_acc', 'comparison of 3 layer and 4 layer accuracy', path='./figures/1a_5/')
+compare_models(history_3, history_4, 'sparse_categorical_crossentropy', '3_layer', '4_layer', 'compare_3_4_layer_loss', 'comparison of 3 layer and 4 layer loss', path='./figures/1a_5/')
 ################################ END TEST #####################################
