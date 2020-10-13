@@ -1,7 +1,7 @@
 #!/bin/bash
 #SBATCH --job-name=assignment_1
-#SBATCH --output=assignment_1.out
-#SBATCH --error=assignment_1.err
+#SBATCH --output=TESTassignment_1.out
+#SBATCH --error=TESTassignment_1.err
 #SBATCH --nodes=1
 #SBATCH --gres=gpu:1
 #SBATCH --mem=8000M
@@ -11,6 +11,6 @@
 #SBATCH --partition=SCSEGPU_UG
 
 module load anaconda
-conda activate tf2.2
-python $1
+conda activate tf
+python 1a_1.py
 

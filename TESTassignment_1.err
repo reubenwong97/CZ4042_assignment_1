@@ -1,0 +1,25 @@
+
+CommandNotFoundError: Your shell has not been properly configured to use 'conda activate'.
+To initialize your shell, run
+
+    $ conda init <SHELL_NAME>
+
+Currently supported shells are:
+  - bash
+  - fish
+  - tcsh
+  - xonsh
+  - zsh
+  - powershell
+
+See 'conda init --help' for more information and options.
+
+IMPORTANT: You may need to close and restart your shell after running 'conda init'.
+
+
+Traceback (most recent call last):
+  File "1a_1.py", line 8, in <module>
+    from util.plots import plot_acc, plot_loss
+  File "/home/UG/wong1109/CZ4042_assignment_1/util/plots.py", line 2, in <module>
+    import seaborn as sns
+ModuleNotFoundError: No module named 'seaborn'
