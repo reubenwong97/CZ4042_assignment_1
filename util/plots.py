@@ -65,6 +65,6 @@ def compare_models(history_1, history_2, which_compare, model_1_name, model_2_na
     plt.ylabel(which_compare)
     plt.xlabel('epochs')
     plt.title(title)
-    plt.legend(loc='lower right')
+    plt.legend(loc='best')
     
     fig.savefig(path+plot_name) if path else fig.savefig('./figures/'+plot_name)
