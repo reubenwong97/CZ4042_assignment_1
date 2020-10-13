@@ -11,6 +11,6 @@
 #SBATCH --partition=SCSEGPU_UG
 
 module load anaconda
-conda activate tf2.2
+conda activate tf
 python $1
 
