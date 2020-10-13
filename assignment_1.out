@@ -2207,7 +2207,7 @@ Epoch 102/500
 Epoch 103/500
 38/38 - 0s - loss: 0.4819 - accuracy: 0.8151 - sparse_categorical_crossentropy: 0.4818 - val_loss: 0.4139 - val_accuracy: 0.8658 - val_sparse_categorical_crossentropy: 0.4138
 Epoch 104/500
-38/38 - 0s - loss: 0.4797 - accuracy: 0.8151 - sparse_categorical_crossentropy: 0.4795 - val_loss: 0.4106 - val_accuracy: 0.8658 - val_sparse_categorical_crossentropy: 0.4105
+38/38 - 0s - loss: 0.4796 - accuracy: 0.8151 - sparse_categorical_crossentropy: 0.4795 - val_loss: 0.4106 - val_accuracy: 0.8658 - val_sparse_categorical_crossentropy: 0.4105
 Epoch 105/500
 38/38 - 0s - loss: 0.4774 - accuracy: 0.8168 - sparse_categorical_crossentropy: 0.4773 - val_loss: 0.4086 - val_accuracy: 0.8658 - val_sparse_categorical_crossentropy: 0.4085
 Epoch 106/500
@@ -3619,7 +3619,7 @@ Epoch 308/500
 Epoch 309/500
 38/38 - 0s - loss: 0.2717 - accuracy: 0.8866 - sparse_categorical_crossentropy: 0.2715 - val_loss: 0.8943 - val_accuracy: 0.8148 - val_sparse_categorical_crossentropy: 0.8941
 Epoch 310/500
-38/38 - 0s - loss: 0.2714 - accuracy: 0.8883 - sparse_categorical_crossentropy: 0.2712 - val_loss: 0.8952 - val_accuracy: 0.8148 - val_sparse_categorical_crossentropy: 0.8950
+38/38 - 0s - loss: 0.2714 - accuracy: 0.8883 - sparse_categorical_crossentropy: 0.2712 - val_loss: 0.8952 - val_accuracy: 0.8148 - val_sparse_categorical_crossentropy: 0.8949
 Epoch 311/500
 38/38 - 0s - loss: 0.2710 - accuracy: 0.8875 - sparse_categorical_crossentropy: 0.2708 - val_loss: 0.8958 - val_accuracy: 0.8148 - val_sparse_categorical_crossentropy: 0.8956
 Epoch 312/500
@@ -3713,7 +3713,7 @@ Epoch 355/500
 Epoch 356/500
 38/38 - 0s - loss: 0.2597 - accuracy: 0.8883 - sparse_categorical_crossentropy: 0.2595 - val_loss: 0.9319 - val_accuracy: 0.8148 - val_sparse_categorical_crossentropy: 0.9317
 Epoch 357/500
-38/38 - 0s - loss: 0.2598 - accuracy: 0.8925 - sparse_categorical_crossentropy: 0.2595 - val_loss: 0.9325 - val_accuracy: 0.8148 - val_sparse_categorical_crossentropy: 0.9322
+38/38 - 0s - loss: 0.2598 - accuracy: 0.8917 - sparse_categorical_crossentropy: 0.2595 - val_loss: 0.9325 - val_accuracy: 0.8148 - val_sparse_categorical_crossentropy: 0.9322
 Epoch 358/500
 38/38 - 0s - loss: 0.2597 - accuracy: 0.8892 - sparse_categorical_crossentropy: 0.2594 - val_loss: 0.9333 - val_accuracy: 0.8148 - val_sparse_categorical_crossentropy: 0.9330
 Epoch 359/500
@@ -3725,7 +3725,7 @@ Epoch 361/500
 Epoch 362/500
 38/38 - 0s - loss: 0.2585 - accuracy: 0.8908 - sparse_categorical_crossentropy: 0.2582 - val_loss: 0.9356 - val_accuracy: 0.8148 - val_sparse_categorical_crossentropy: 0.9354
 Epoch 363/500
-38/38 - 0s - loss: 0.2583 - accuracy: 0.8883 - sparse_categorical_crossentropy: 0.2580 - val_loss: 0.9365 - val_accuracy: 0.8148 - val_sparse_categorical_crossentropy: 0.9362
+38/38 - 0s - loss: 0.2583 - accuracy: 0.8883 - sparse_categorical_crossentropy: 0.2580 - val_loss: 0.9364 - val_accuracy: 0.8148 - val_sparse_categorical_crossentropy: 0.9362
 Epoch 364/500
 38/38 - 0s - loss: 0.2581 - accuracy: 0.8908 - sparse_categorical_crossentropy: 0.2579 - val_loss: 0.9373 - val_accuracy: 0.8148 - val_sparse_categorical_crossentropy: 0.9370
 Epoch 365/500
@@ -3759,7 +3759,7 @@ Epoch 378/500
 Epoch 379/500
 38/38 - 0s - loss: 0.2551 - accuracy: 0.8917 - sparse_categorical_crossentropy: 0.2549 - val_loss: 0.9476 - val_accuracy: 0.8148 - val_sparse_categorical_crossentropy: 0.9474
 Epoch 380/500
-38/38 - 0s - loss: 0.2550 - accuracy: 0.8925 - sparse_categorical_crossentropy: 0.2547 - val_loss: 0.9483 - val_accuracy: 0.8148 - val_sparse_categorical_crossentropy: 0.9480
+38/38 - 0s - loss: 0.2550 - accuracy: 0.8925 - sparse_categorical_crossentropy: 0.2547 - val_loss: 0.9482 - val_accuracy: 0.8148 - val_sparse_categorical_crossentropy: 0.9480
 Epoch 381/500
 38/38 - 0s - loss: 0.2547 - accuracy: 0.8908 - sparse_categorical_crossentropy: 0.2544 - val_loss: 0.9491 - val_accuracy: 0.8148 - val_sparse_categorical_crossentropy: 0.9488
 Epoch 382/500
@@ -3811,7 +3811,7 @@ Epoch 404/500
 Epoch 405/500
 38/38 - 0s - loss: 0.2503 - accuracy: 0.8942 - sparse_categorical_crossentropy: 0.2500 - val_loss: 0.9636 - val_accuracy: 0.8148 - val_sparse_categorical_crossentropy: 0.9633
 Epoch 406/500
-38/38 - 0s - loss: 0.2504 - accuracy: 0.8950 - sparse_categorical_crossentropy: 0.2501 - val_loss: 0.9642 - val_accuracy: 0.8148 - val_sparse_categorical_crossentropy: 0.9640
+38/38 - 0s - loss: 0.2504 - accuracy: 0.8950 - sparse_categorical_crossentropy: 0.2501 - val_loss: 0.9642 - val_accuracy: 0.8148 - val_sparse_categorical_crossentropy: 0.9639
 Epoch 407/500
 38/38 - 0s - loss: 0.2501 - accuracy: 0.8959 - sparse_categorical_crossentropy: 0.2498 - val_loss: 0.9646 - val_accuracy: 0.8148 - val_sparse_categorical_crossentropy: 0.9644
 Epoch 408/500
@@ -3871,7 +3871,7 @@ Epoch 434/500
 Epoch 435/500
 38/38 - 0s - loss: 0.2456 - accuracy: 0.8967 - sparse_categorical_crossentropy: 0.2453 - val_loss: 0.9801 - val_accuracy: 0.8148 - val_sparse_categorical_crossentropy: 0.9798
 Epoch 436/500
-38/38 - 0s - loss: 0.2453 - accuracy: 0.8992 - sparse_categorical_crossentropy: 0.2451 - val_loss: 0.9797 - val_accuracy: 0.8148 - val_sparse_categorical_crossentropy: 0.9795
+38/38 - 0s - loss: 0.2453 - accuracy: 0.8992 - sparse_categorical_crossentropy: 0.2451 - val_loss: 0.9797 - val_accuracy: 0.8148 - val_sparse_categorical_crossentropy: 0.9794
 Epoch 437/500
 38/38 - 0s - loss: 0.2456 - accuracy: 0.8959 - sparse_categorical_crossentropy: 0.2453 - val_loss: 0.9811 - val_accuracy: 0.8148 - val_sparse_categorical_crossentropy: 0.9808
 Epoch 438/500
@@ -3995,7 +3995,7 @@ Epoch 496/500
 Epoch 497/500
 38/38 - 0s - loss: 0.2368 - accuracy: 0.8967 - sparse_categorical_crossentropy: 0.2365 - val_loss: 1.0074 - val_accuracy: 0.8148 - val_sparse_categorical_crossentropy: 1.0071
 Epoch 498/500
-38/38 - 0s - loss: 0.2368 - accuracy: 0.9026 - sparse_categorical_crossentropy: 0.2365 - val_loss: 1.0075 - val_accuracy: 0.8148 - val_sparse_categorical_crossentropy: 1.0072
+38/38 - 0s - loss: 0.2368 - accuracy: 0.9026 - sparse_categorical_crossentropy: 0.2365 - val_loss: 1.0075 - val_accuracy: 0.8148 - val_sparse_categorical_crossentropy: 1.0071
 Epoch 499/500
 38/38 - 0s - loss: 0.2370 - accuracy: 0.9009 - sparse_categorical_crossentropy: 0.2367 - val_loss: 1.0078 - val_accuracy: 0.8148 - val_sparse_categorical_crossentropy: 1.0075
 Epoch 500/500
@@ -4805,7 +4805,7 @@ Epoch 401/500
 Epoch 402/500
 38/38 - 0s - loss: 0.2786 - accuracy: 0.8791 - sparse_categorical_crossentropy: 0.2784 - val_loss: 0.3119 - val_accuracy: 0.8822 - val_sparse_categorical_crossentropy: 0.3117
 Epoch 403/500
-38/38 - 0s - loss: 0.2783 - accuracy: 0.8774 - sparse_categorical_crossentropy: 0.2780 - val_loss: 0.3126 - val_accuracy: 0.8822 - val_sparse_categorical_crossentropy: 0.3124
+38/38 - 0s - loss: 0.2783 - accuracy: 0.8774 - sparse_categorical_crossentropy: 0.2780 - val_loss: 0.3127 - val_accuracy: 0.8822 - val_sparse_categorical_crossentropy: 0.3124
 Epoch 404/500
 38/38 - 0s - loss: 0.2781 - accuracy: 0.8774 - sparse_categorical_crossentropy: 0.2778 - val_loss: 0.3119 - val_accuracy: 0.8788 - val_sparse_categorical_crossentropy: 0.3117
 Epoch 405/500
@@ -6505,7 +6505,7 @@ Epoch 250/500
 Epoch 251/500
 38/38 - 0s - loss: 0.2421 - accuracy: 0.9076 - sparse_categorical_crossentropy: 0.2418 - val_loss: 0.4128 - val_accuracy: 0.8322 - val_sparse_categorical_crossentropy: 0.4125
 Epoch 252/500
-38/38 - 0s - loss: 0.2419 - accuracy: 0.9050 - sparse_categorical_crossentropy: 0.2417 - val_loss: 0.4102 - val_accuracy: 0.8322 - val_sparse_categorical_crossentropy: 0.4100
+38/38 - 0s - loss: 0.2420 - accuracy: 0.9050 - sparse_categorical_crossentropy: 0.2417 - val_loss: 0.4102 - val_accuracy: 0.8322 - val_sparse_categorical_crossentropy: 0.4100
 Epoch 253/500
 38/38 - 0s - loss: 0.2412 - accuracy: 0.9084 - sparse_categorical_crossentropy: 0.2409 - val_loss: 0.4119 - val_accuracy: 0.8322 - val_sparse_categorical_crossentropy: 0.4116
 Epoch 254/500
@@ -8287,7 +8287,7 @@ Epoch 141/500
 Epoch 142/500
 38/38 - 0s - loss: 0.3166 - accuracy: 0.8682 - sparse_categorical_crossentropy: 0.3163 - val_loss: 1.1937 - val_accuracy: 0.0741 - val_sparse_categorical_crossentropy: 1.1935
 Epoch 143/500
-38/38 - 0s - loss: 0.3158 - accuracy: 0.8690 - sparse_categorical_crossentropy: 0.3156 - val_loss: 1.1954 - val_accuracy: 0.0741 - val_sparse_categorical_crossentropy: 1.1952
+38/38 - 0s - loss: 0.3158 - accuracy: 0.8690 - sparse_categorical_crossentropy: 0.3156 - val_loss: 1.1954 - val_accuracy: 0.0741 - val_sparse_categorical_crossentropy: 1.1951
 Epoch 144/500
 38/38 - 0s - loss: 0.3153 - accuracy: 0.8699 - sparse_categorical_crossentropy: 0.3150 - val_loss: 1.2001 - val_accuracy: 0.0741 - val_sparse_categorical_crossentropy: 1.1998
 Epoch 145/500
@@ -10287,7 +10287,7 @@ Epoch 140/500
 Epoch 141/500
 38/38 - 0s - loss: 0.2948 - accuracy: 0.8765 - sparse_categorical_crossentropy: 0.2945 - val_loss: 0.9797 - val_accuracy: 0.8020 - val_sparse_categorical_crossentropy: 0.9794
 Epoch 142/500
-38/38 - 0s - loss: 0.2945 - accuracy: 0.8765 - sparse_categorical_crossentropy: 0.2942 - val_loss: 0.9788 - val_accuracy: 0.8020 - val_sparse_categorical_crossentropy: 0.9786
+38/38 - 0s - loss: 0.2945 - accuracy: 0.8765 - sparse_categorical_crossentropy: 0.2942 - val_loss: 0.9788 - val_accuracy: 0.8020 - val_sparse_categorical_crossentropy: 0.9785
 Epoch 143/500
 38/38 - 0s - loss: 0.2941 - accuracy: 0.8815 - sparse_categorical_crossentropy: 0.2938 - val_loss: 0.9791 - val_accuracy: 0.8020 - val_sparse_categorical_crossentropy: 0.9788
 Epoch 144/500
@@ -11659,7 +11659,7 @@ Epoch 326/500
 Epoch 327/500
 38/38 - 0s - loss: 0.2152 - accuracy: 0.9151 - sparse_categorical_crossentropy: 0.2148 - val_loss: 0.3883 - val_accuracy: 0.8121 - val_sparse_categorical_crossentropy: 0.3879
 Epoch 328/500
-38/38 - 0s - loss: 0.2152 - accuracy: 0.9160 - sparse_categorical_crossentropy: 0.2149 - val_loss: 0.3890 - val_accuracy: 0.8154 - val_sparse_categorical_crossentropy: 0.3887
+38/38 - 0s - loss: 0.2152 - accuracy: 0.9160 - sparse_categorical_crossentropy: 0.2149 - val_loss: 0.3891 - val_accuracy: 0.8154 - val_sparse_categorical_crossentropy: 0.3887
 Epoch 329/500
 38/38 - 0s - loss: 0.2150 - accuracy: 0.9134 - sparse_categorical_crossentropy: 0.2146 - val_loss: 0.3889 - val_accuracy: 0.8121 - val_sparse_categorical_crossentropy: 0.3885
 Epoch 330/500
@@ -12895,7 +12895,7 @@ Epoch 444/500
 Epoch 445/500
 38/38 - 0s - loss: 0.2446 - accuracy: 0.8933 - sparse_categorical_crossentropy: 0.2442 - val_loss: 0.2000 - val_accuracy: 0.9195 - val_sparse_categorical_crossentropy: 0.1995
 Epoch 446/500
-38/38 - 0s - loss: 0.2447 - accuracy: 0.8941 - sparse_categorical_crossentropy: 0.2442 - val_loss: 0.2005 - val_accuracy: 0.9228 - val_sparse_categorical_crossentropy: 0.2000
+38/38 - 0s - loss: 0.2447 - accuracy: 0.8941 - sparse_categorical_crossentropy: 0.2442 - val_loss: 0.2005 - val_accuracy: 0.9228 - val_sparse_categorical_crossentropy: 0.2001
 Epoch 447/500
 38/38 - 0s - loss: 0.2447 - accuracy: 0.8950 - sparse_categorical_crossentropy: 0.2443 - val_loss: 0.1995 - val_accuracy: 0.9161 - val_sparse_categorical_crossentropy: 0.1991
 Epoch 448/500
@@ -13817,7 +13817,7 @@ Epoch 405/500
 Epoch 406/500
 38/38 - 0s - loss: 0.2572 - accuracy: 0.8892 - sparse_categorical_crossentropy: 0.2568 - val_loss: 1.3696 - val_accuracy: 0.0741 - val_sparse_categorical_crossentropy: 1.3693
 Epoch 407/500
-38/38 - 0s - loss: 0.2572 - accuracy: 0.8925 - sparse_categorical_crossentropy: 0.2569 - val_loss: 1.3705 - val_accuracy: 0.0741 - val_sparse_categorical_crossentropy: 1.3702
+38/38 - 0s - loss: 0.2572 - accuracy: 0.8925 - sparse_categorical_crossentropy: 0.2569 - val_loss: 1.3705 - val_accuracy: 0.0741 - val_sparse_categorical_crossentropy: 1.3701
 Epoch 408/500
 38/38 - 0s - loss: 0.2574 - accuracy: 0.8908 - sparse_categorical_crossentropy: 0.2571 - val_loss: 1.3712 - val_accuracy: 0.0741 - val_sparse_categorical_crossentropy: 1.3709
 Epoch 409/500
@@ -19249,7 +19249,7 @@ Epoch 120/500
 Epoch 121/500
 38/38 - 0s - loss: 0.2966 - accuracy: 0.8732 - sparse_categorical_crossentropy: 0.2963 - val_loss: 0.3219 - val_accuracy: 0.8687 - val_sparse_categorical_crossentropy: 0.3216
 Epoch 122/500
-38/38 - 0s - loss: 0.2966 - accuracy: 0.8799 - sparse_categorical_crossentropy: 0.2963 - val_loss: 0.3216 - val_accuracy: 0.8754 - val_sparse_categorical_crossentropy: 0.3212
+38/38 - 0s - loss: 0.2966 - accuracy: 0.8799 - sparse_categorical_crossentropy: 0.2963 - val_loss: 0.3216 - val_accuracy: 0.8754 - val_sparse_categorical_crossentropy: 0.3213
 Epoch 123/500
 38/38 - 0s - loss: 0.2954 - accuracy: 0.8825 - sparse_categorical_crossentropy: 0.2951 - val_loss: 0.3211 - val_accuracy: 0.8721 - val_sparse_categorical_crossentropy: 0.3208
 Epoch 124/500
@@ -19779,7 +19779,7 @@ Epoch 385/500
 Epoch 386/500
 38/38 - 0s - loss: 0.2338 - accuracy: 0.9043 - sparse_categorical_crossentropy: 0.2334 - val_loss: 0.3009 - val_accuracy: 0.8822 - val_sparse_categorical_crossentropy: 0.3005
 Epoch 387/500
-38/38 - 0s - loss: 0.2337 - accuracy: 0.9076 - sparse_categorical_crossentropy: 0.2332 - val_loss: 0.2996 - val_accuracy: 0.8855 - val_sparse_categorical_crossentropy: 0.2992
+38/38 - 0s - loss: 0.2337 - accuracy: 0.9076 - sparse_categorical_crossentropy: 0.2332 - val_loss: 0.2996 - val_accuracy: 0.8855 - val_sparse_categorical_crossentropy: 0.2991
 Epoch 388/500
 38/38 - 0s - loss: 0.2338 - accuracy: 0.9018 - sparse_categorical_crossentropy: 0.2334 - val_loss: 0.3020 - val_accuracy: 0.8855 - val_sparse_categorical_crossentropy: 0.3016
 Epoch 389/500

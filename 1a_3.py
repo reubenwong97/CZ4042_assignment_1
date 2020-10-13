@@ -89,10 +89,10 @@ for hp_i, num_neuron in enumerate(NUM_NEURONS):
 
     #! IDEA: collect the val data from fit -> stack over CV runs -> take mean -> plot
 
-np.save('./data/1a_3/train_accs.npy', AVG_TRAIN_ACCS)
-np.save('./data/1a_3/val_accs.npy', AVG_VAL_ACCS)
-np.save('./data/1a_3/avg_time_1_epoch.npy', AVG_TIMES)
+np.save('./data/1a_3/train_accs_500.npy', AVG_TRAIN_ACCS)
+np.save('./data/1a_3/val_accs_500.npy', AVG_VAL_ACCS)
+np.save('./data/1a_3/avg_time_1_epoch_500.npy', AVG_TIMES)
 
-plot_accs(AVG_TRAIN_ACCS, 'train_accs', 'epochs vs train_accs', 'num_neurons', NUM_NEURONS, train=True, path='./figures/1a_3/')
-plot_accs(AVG_VAL_ACCS, 'val_accs', 'epochs vs val_accs', 'num_neurons', NUM_NEURONS, train=False, path='./figures/1a_3/')
-plot_time(AVG_TIMES, 'avg_time', 'num_neurons vs avg_time per epoch', 'num_neurons', NUM_NEURONS, path='./figures/1a_3/')
+plot_accs(AVG_TRAIN_ACCS, 'train_accs_500', 'epochs vs train_accs', 'num_neurons', NUM_NEURONS, train=True, path='./figures/1a_3/')
+plot_accs(AVG_VAL_ACCS, 'val_accs_500', 'epochs vs val_accs', 'num_neurons', NUM_NEURONS, train=False, path='./figures/1a_3/')
+plot_time(AVG_TIMES, 'avg_time_500', 'num_neurons vs avg_time per epoch', 'num_neurons', NUM_NEURONS, path='./figures/1a_3/')
