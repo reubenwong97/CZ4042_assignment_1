@@ -77,6 +77,6 @@ history_3 = model_3.fit(X_train, y_train,
                             validation_data=(X_test, y_test),
                             callbacks=[WandbCallback()])
 
-compare_models(history_3, history_4, 'accuracy', '3_layer', '4_layer', 'compare_3_4_layer_acc', 'comparison of 3 layer and 4 layer accuracy', path='./figures/1a_5/')
-compare_models(history_3, history_4, 'sparse_categorical_crossentropy', '3_layer', '4_layer', 'compare_3_4_layer_loss', 'comparison of 3 layer and 4 layer loss', path='./figures/1a_5/')
+compare_models(history_3.history, history_4.history, 'accuracy', '3_layer', '4_layer', 'compare_3_4_layer_acc', 'comparison of 3 layer and 4 layer accuracy', path='./figures/1a_5/')
+compare_models(history_3.history, history_4.history, 'sparse_categorical_crossentropy', '3_layer', '4_layer', 'compare_3_4_layer_loss', 'comparison of 3 layer and 4 layer loss', path='./figures/1a_5/')
 ################################ END TEST #####################################
