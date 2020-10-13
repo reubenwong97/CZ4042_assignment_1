@@ -1,0 +1,4 @@
+Traceback (most recent call last):
+  File "1a_1.py", line 7, in <module>
+    from sklearn.model_selection import KFold, train_test_split
+ModuleNotFoundError: No module named 'sklearn'
