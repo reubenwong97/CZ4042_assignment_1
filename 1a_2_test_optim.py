@@ -14,7 +14,7 @@ wandb.init(project="nndl_assignment_1")
 NUM_CLASSES = 3
 
 # validation loss stabalises at around 250 epochs -> 300 epochs for plotting
-epochs = 300
+epochs = 500
 OPTIM_BATCH_SIZE = 32
 num_neurons = 10
 seed = 10
