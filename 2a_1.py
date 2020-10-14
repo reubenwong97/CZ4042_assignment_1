@@ -51,4 +51,4 @@ history =starter_model.fit(X_train, y_train,
 
 # plot learning curves
 plot_loss(history.history, 'training_val_losses', 'mse', 'epochs vs mse losses', path='./figures/2a_1/')
-plot_predictions(starter_model, X_test, y_test, 50, 'predictions_targets', 'predictions and targets', path='./figures/2a_1')
+plot_predictions(starter_model, X_test, y_test, 50, 'predictions_targets', 'predictions and targets', path='./figures/2a_1/')
