@@ -81,11 +81,13 @@ best_mse = np.inf
 
 for j in range(original_feature_len):
 # maximum number of times to loop
+    print(f'...subset length {original_feature_len-j}...')
     has_improved = False
     best_feature_idx = None
 
     # loop for searching through inputs
     for i in range(X_train.shape[1]):
+        print(f'...analysing {i}th feature...')
         # drop ith feature from train and test sets
         X_train_ = np.delete(X_train, [i], axis=1)
         X_test_ = np.delete(X_test, [i], axis=1)
