@@ -8,7 +8,8 @@ from util.plots import plot_loss, plot_predictions
 
 NUM_CLASSES = 7
 
-epochs = 300
+# determined from early stopping
+epochs = 50
 batch_size = 8
 num_neurons = 10
 weight_decay = 10e-3
@@ -47,8 +48,7 @@ history =starter_model.fit(X_train, y_train,
                         epochs=epochs,
                         batch_size=batch_size,
                         verbose = 2,
-                        validation_data=(X_test, y_test),
-			callbacks=[keras.callbacks.EarlyStopping(monitor='val_mse', patience=3)])
+                        validation_data=(X_test, y_test))
 
 # plot learning curves
 plot_loss(history.history, 'training_val_losses', 'mse', 'epochs vs mse losses', path='./figures/2a_1/')
