@@ -48,7 +48,7 @@ history =starter_model.fit(X_train, y_train,
                         batch_size=batch_size,
                         verbose = 2,
                         validation_data=(X_test, y_test),
-			callbacks=[keras.callbacks.EarlyStopping(monitor='val_mse', patience=10)])
+			callbacks=[keras.callbacks.EarlyStopping(monitor='val_mse', patience=3)])
 
 # plot learning curves
 plot_loss(history.history, 'training_val_losses', 'mse', 'epochs vs mse losses', path='./figures/2a_1/')
