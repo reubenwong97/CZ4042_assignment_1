@@ -40,7 +40,8 @@ starter_model = keras.Sequential([
 
 starter_model.compile(optimizer=keras.optimizers.SGD(learning_rate=lr),
               loss=keras.losses.MeanSquaredError(),
-              metrics=['mse'])
+              metrics=['mse'],
+              callbacks=[keras.callbacks.EarlyStopping(monitor='val_mse')])
 
 # learn the network
 history =starter_model.fit(X_train, y_train,
