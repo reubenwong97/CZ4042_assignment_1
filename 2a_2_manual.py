@@ -139,4 +139,4 @@ print("...BEST MSES...\n", BEST_MSES)
 print("...BEST IDXS...\n", BEST_IDXS)
 print("...ALL MSES...\n", ALL_MSES)
 
-plot_val_losses(ALL_MSE_HIST, 'mse_histories_7', 'comparing subset size 7', path='./figures/2a_2/')
+plot_val_losses(ALL_MSE_HIST, 'mse_histories_7', 'comparing subset size 7', path='./figures/2a_2/manual/')

@@ -58,7 +58,7 @@ def plot_loss(history, name, loss, title, with_val=True , path=None):
 def plot_val_losses(mse_array, name, title, path=None):
     fig = plt.figure()
     for i, mse_hist in enumerate(mse_array):
-        plt.plt(mse_hist, label='dropping_'+i+'_feature')
+        plt.plot(mse_hist, label='dropping_'+str(i)+'_feature')
     plt.ylabel('loss')
     plt.xlabel('epochs')
     plt.title(title)
