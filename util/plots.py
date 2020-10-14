@@ -48,7 +48,7 @@ def plot_loss(history, name, loss, title, with_val=True , path=None):
     plt.ylabel('loss')
     plt.xlabel('epochs')
     plt.title(title)
-    plt.legend(loc='lower right')
+    plt.legend(loc='best')
 
     if path:
         fig.savefig(path + name)
