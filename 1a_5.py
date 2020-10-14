@@ -45,7 +45,7 @@ model_4 = keras.Sequential([
             keras.layers.Dense(NUM_CLASSES) # softmax not needed as loss specifies from_logits
         ])
 
-model_4.compile(optimizer='sgd',
+model_4.compile(optimizer=keras.optimizers.SGD(learning_rate=0.01),
                     loss=keras.losses.SparseCategoricalCrossentropy(from_logits=True),
                     metrics=['accuracy', keras.metrics.SparseCategoricalCrossentropy(from_logits=True)])
 
