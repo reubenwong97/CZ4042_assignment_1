@@ -85,8 +85,8 @@ def plot_predictions(model, X_test, y_test, num_obs, plot_name, title, scatter=T
         plt.scatter(np.arange(num_obs), predictions, label='predictions')
         plt.scatter(np.arange(num_obs), y_test, label='truth_values')
     else:
-        plt.plot(np.arange(num_obs), predictions, label='predictions')
-        plt.plot(np.arange(num_obs), y_test, label='truth_values')
+        plt.plot(np.arange(num_obs), predictions, linestyle='-', marker='o', label='predictions')
+        plt.plot(np.arange(num_obs), y_test, linestyle='-', marker='o', label='truth_values')
 
     plt.xlabel('$i^{th}$ data point')
     plt.ylabel('$y$-values')
