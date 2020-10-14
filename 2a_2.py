@@ -24,7 +24,7 @@ from util.plots import plot_loss, plot_predictions
 NUM_CLASSES = 7
 
 # determined from early stopping
-epochs = 100
+epochs = 75
 batch_size = 8
 num_neurons = 10
 weight_decay = 10e-3
@@ -78,7 +78,7 @@ BEST_IDXS = []
 ALL_MSES = []
 
 original_feature_len = X_train.shape[1]
-best_mse = final_mse
+best_mse = np.inf
 
 for j in range(original_feature_len):
 # maximum number of times to loop
@@ -112,10 +112,7 @@ for j in range(original_feature_len):
 
         last_mse = np.mean(history.history['val_mse'][-5:])
         subset_mses.append(last_mse)
-<<<<<<< HEAD
-=======
         # include tolerance for noise
->>>>>>> 9208bf89e0dc4145fc6f8ccb2260c5e0461eeedb
         if last_mse < best_mse+0.0002:
             has_improved = True
             best_mse = last_mse
