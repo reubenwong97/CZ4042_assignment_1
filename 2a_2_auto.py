@@ -72,6 +72,7 @@ np.save('./data/2a_2/baseline_train_mse.npy', baseline_history.history['mse'])
 # informed that while cross-validation is correct, not done for 
 # this assignment due to time required
 
+TOLERANCE = 0.0002 # tunable tolerance parameter
 BEST_MSES = []
 BEST_MSE_HIST = []
 BEST_IDXS = []
@@ -104,16 +105,16 @@ for j in range(original_feature_len):
                     metrics=['mse'])
 
         # learn the network
-        history =model.fit(X_train_, y_train,
+        history = model.fit(X_train_, y_train,
                                 epochs=epochs,
                                 batch_size=batch_size,
-                                verbose = 2,
+                                verbose=2,
                                 validation_data=(X_test_, y_test))
 
         last_mse = np.mean(history.history['val_mse'][-5:])
         subset_mses.append(last_mse)
         # include tolerance for noise
-        if last_mse < best_mse+0.0002:
+        if last_mse < best_mse+TOLERANCE:
             has_improved = True
             best_mse = last_mse
             best_feature_idx = i
@@ -136,9 +137,9 @@ for j in range(original_feature_len):
         break
 
 # save arrays
-np.save('./data/2a_2/best_mse_scores.npy', BEST_MSES)
-np.save('./data/2a_2/best_mse_history.npy', BEST_MSE_HIST)
-np.save('./data/2a_2/best_idxs.npy', BEST_IDXS)
+np.save('./data/2a_2/auto/best_mse_scores.npy', BEST_MSES)
+np.save('./data/2a_2/auto/best_mse_history.npy', BEST_MSE_HIST)
+np.save('./data/2a_2/auto/best_idxs.npy', BEST_IDXS)
 
 print("...BEST MSES...\n", BEST_MSES)
 print("...BEST IDXS...\n", BEST_IDXS)
