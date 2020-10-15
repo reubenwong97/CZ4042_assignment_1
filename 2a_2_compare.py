@@ -40,6 +40,8 @@ X_train_6 = np.delete(X_train, [4], axis=1)
 X_test_6 = np.delete(X_test, [4], axis=1)
 X_train_5 = np.delete(X_train_6, [2], axis=1)
 X_test_5 = np.delete(X_test_6, [2], axis=1)
+X_train_4 = np.delete(X_train_5, [4], axis=1)
+X_test_4 = np.delete(X_test_5, [4], axis=1)
 ############################################# handling dataset #############################################
 
 # baseline to compare to
@@ -93,6 +95,24 @@ model_5_history = model_5.fit(X_train_5, y_train,
                         verbose=2,
                         validation_data=(X_test_5, y_test))
 
-mse_array = [baseline_history.history['val_mse'], model_6_history.history['val_mse'], model_5_history.history['val_mse']]
+# model on subset length 5
+model_4 = keras.Sequential([
+        keras.layers.Dense(num_neurons, activation='relu'),
+        keras.layers.Dense(1)
+    ])
 
-compare_subset_lengths(mse_array, 7, 'comparing_subset_performance', 'perfomance of models trained on subset of features', path='./figures/2a_2/')
+model_4.compile(optimizer=keras.optimizers.SGD(learning_rate=lr),
+                loss=keras.losses.MeanSquaredError(),
+                metrics=['mse'])
+
+    # learn the network
+model_4_history = model_4.fit(X_train_4, y_train,
+                        epochs=epochs,
+                        batch_size=batch_size,
+                        verbose=2,
+                        validation_data=(X_test_4, y_test))
+
+mse_array = [baseline_history.history['val_mse'], model_6_history.history['val_mse'], 
+    model_5_history.history['val_mse'], model_4_history.history['val_mse']]
+
+compare_subset_lengths(mse_array, 7, 'comparing_subset_4567', 'perfomance of models trained on subset of features', path='./figures/2a_2/')
