@@ -12,7 +12,7 @@ from tensorflow import keras
 NUM_CLASSES = 7
 
 # determined from early stopping
-epochs = 75
+epochs = 40
 batch_size = 8
 num_neurons = 10
 weight_decay = 10e-3
