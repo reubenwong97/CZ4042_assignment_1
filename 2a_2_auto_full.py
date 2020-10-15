@@ -66,13 +66,13 @@ baseline_history = baseline.fit(X_train, y_train,
                         validation_data=(X_test, y_test))
 
 final_mse = np.mean(baseline_history.history['val_mse'][-5:])
+baseline_mse = baseline_history.history['val_mse']
 np.save('./data/2a_2/baseline_test_mse.npy', baseline_history.history['val_mse'])
 np.save('./data/2a_2/baseline_train_mse.npy', baseline_history.history['mse'])
 
 # informed that while cross-validation is correct, not done for 
 # this assignment due to time required
 
-TOLERANCE = 0.0002 # tunable tolerance parameter
 BEST_MSES = []
 BEST_MSE_HIST = []
 BEST_IDXS = []
@@ -83,13 +83,13 @@ FIRST_ROW_X = []
 original_feature_len = X_train.shape[1]
 best_mse = final_mse
 
-for j in range(original_feature_len):
-# maximum number of times to loop
+for j in range(original_feature_len-1):
+# maximum number of times to loop -> loop until 1 feature left
     print(f'...subset length {original_feature_len-j}...')
-    has_improved = False
     best_feature_idx = None
     subset_mses = [] 
     first_xes = []
+    subset_mse_histories = []
 
     # loop for searching through inputs
     for i in range(X_train.shape[1]):
@@ -115,39 +115,33 @@ for j in range(original_feature_len):
                                 validation_data=(X_test_, y_test))
 
         last_mse = np.mean(history.history['val_mse'][-5:])
-        ALL_MSE_HIST.append(history.history['val_mse'])
+        subset_mse_histories.append(history.history['val_mse'])
         subset_mses.append(last_mse)
         first_xes.append((f'subset length: {len(X_train_[0])}', X_train_[0]))
-        # include tolerance for noise
-        if last_mse < best_mse+TOLERANCE:
-            has_improved = True
-            best_mse = last_mse
-            best_feature_idx = i
-            best_mse_history = history.history['val_mse']
+
+    best_mse = np.min(subset_mses)
+    best_feature_idx = np.argmin(subset_mses)
+    best_mse_history = subset_mse_histories[best_feature_idx]
 
     ALL_MSES.append(subset_mses)	
     FIRST_ROW_X.append(first_xes)
+    ALL_MSE_HIST.append(subset_mse_histories)
 
-    if has_improved:
-        # record data
-        BEST_MSES.append(best_mse)
-        BEST_IDXS.append(best_feature_idx)
-        BEST_MSE_HIST.append(best_mse_history)
+    # record data
+    BEST_MSES.append(best_mse)
+    BEST_IDXS.append(best_feature_idx)
+    BEST_MSE_HIST.append(best_mse_history)
 
-        # alter subset
-        X_train = np.delete(X_train, [best_feature_idx], axis=1)
-        X_test = np.delete(X_test, [best_feature_idx], axis=1)
-
-    if not has_improved:
-        print(f'completed {j} runs before breaking')
-        break
+    # alter subset
+    X_train = np.delete(X_train, [best_feature_idx], axis=1)
+    X_test = np.delete(X_test, [best_feature_idx], axis=1)
 
 # save arrays
-np.save('./data/2a_2/auto/best_mse_scores.npy', BEST_MSES)
-np.save('./data/2a_2/auto/best_mse_history.npy', BEST_MSE_HIST)
-np.save('./data/2a_2/auto/best_idxs.npy', BEST_IDXS)
-np.save('./data/2a_2/auto/all_mses_7.npy', ALL_MSES)
-np.save('./data/2a_2/auto/all_mse_hist_7.npy', ALL_MSE_HIST)
+np.save('./data/2a_2/auto_full/best_mse_scores.npy', BEST_MSES)
+np.save('./data/2a_2/auto_full/best_mse_history.npy', BEST_MSE_HIST)
+np.save('./data/2a_2/auto_full/best_idxs.npy', BEST_IDXS)
+np.save('./data/2a_2/auto_full/all_mses_7.npy', ALL_MSES)
+np.save('./data/2a_2/auto_full/all_mse_hist_7.npy', ALL_MSE_HIST)
 
 print("...BEST MSES...\n", BEST_MSES)
 print("...BEST IDXS...\n", BEST_IDXS)
