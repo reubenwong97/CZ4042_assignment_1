@@ -66,6 +66,18 @@ def plot_val_losses(mse_array, name, title, path=None):
 
     fig.savefig(path+name) if path else fig.savefig('./figures/'+name)
 
+def compare_feature_losses(mse_array, idx_array, name ,title, path=None):
+    fig = plt.figure()
+    for i, mse_hist in enumerate(mse_array):
+        feature_dropped = str(idx_array[i])
+        plt.plot(mse_hist, label='dropped_'+feature_dropped+'_feature')
+    plt.ylabel('loss')
+    plt.xlabel('epochs')
+    plt.title(title)
+    plt.legend()
+
+    fig.savefig(path+name) if path else fig.savefig('./figures/'+name)
+
 def compare_models(history_1, history_2, which_compare, model_1_name, model_2_name, plot_name, title, with_test=True, path=None):
     fig = plt.figure()
     plt.plot(history_1[which_compare], label=model_1_name+'_train_'+which_compare)

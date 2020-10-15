@@ -4,7 +4,7 @@ from sklearn.model_selection import train_test_split
 import numpy as np
 import matplotlib.pyplot as plt
 from util.scaler import norm_scale
-from util.plots import plot_loss, plot_predictions
+from util.plots import plot_loss, plot_predictions, compare_feature_losses
 
 # pseudocode
 
@@ -140,10 +140,13 @@ for j in range(original_feature_len-1):
 np.save('./data/2a_2/auto_full/best_mse_scores.npy', BEST_MSES)
 np.save('./data/2a_2/auto_full/best_mse_history.npy', BEST_MSE_HIST)
 np.save('./data/2a_2/auto_full/best_idxs.npy', BEST_IDXS)
-np.save('./data/2a_2/auto_full/all_mses_7.npy', ALL_MSES)
-np.save('./data/2a_2/auto_full/all_mse_hist_7.npy', ALL_MSE_HIST)
+np.save('./data/2a_2/auto_full/all_mses.npy', ALL_MSES)
+np.save('./data/2a_2/auto_full/all_mse_hist.npy', ALL_MSE_HIST)
 
 print("...BEST MSES...\n", BEST_MSES)
 print("...BEST IDXS...\n", BEST_IDXS)
 print("...ALL MSES...\n", ALL_MSES)
 print("...FIRST ROWS...\n", FIRST_ROW_X)
+
+# plots
+compare_feature_losses(best_mse_history, [4, 2, 6, 0, 3, 1], 'full_rse_sweep', 'full_rse_sweep best features', path='./figures/2a_2/auto_full/')
