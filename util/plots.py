@@ -66,6 +66,18 @@ def plot_val_losses(mse_array, name, title, path=None):
 
     fig.savefig(path+name) if path else fig.savefig('./figures/'+name)
 
+def compare_subset_lengths(mse_array, base_length, name, title, path=None):
+    fig= plt.figure()
+    for i, mse_hist in enumerate(mse_array):
+        subset_length = base_length - i
+        plt.plot(mse_hist, label='subset_length='+str(subset_length))
+    plt.ylabel('loss')
+    plt.xlabel('epochs')
+    plt.title(title)
+    plt.legend()
+
+    fig.savefig(path+name) if path else fig.savefig('./figures/'+name)
+
 def compare_feature_losses(mse_array, idx_array, name ,title, baseline=None, path=None):
     fig = plt.figure()
     if baseline:
