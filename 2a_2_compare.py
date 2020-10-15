@@ -9,7 +9,7 @@ from util.plots import plot_loss, plot_predictions, compare_subset_lengths
 NUM_CLASSES = 7
 
 # determined from early stopping
-epochs = 40
+epochs = 60
 batch_size = 8
 num_neurons = 10
 weight_decay = 10e-3
@@ -101,40 +101,40 @@ model_5_history = model_5.fit(X_train_5, y_train,
                         validation_data=(X_test_5, y_test))
 
 # model on subset length 5
- model_4 = keras.Sequential([
+model_4 = keras.Sequential([
          keras.layers.Dense(num_neurons, activation='relu'),
          keras.layers.Dense(1)
      ])
 
- model_4.compile(optimizer=keras.optimizers.SGD(learning_rate=lr),
+model_4.compile(optimizer=keras.optimizers.SGD(learning_rate=lr),
                  loss=keras.losses.MeanSquaredError(),
                  metrics=['mse'])
 
 #     # learn the network
- model_4_history = model_4.fit(X_train_4, y_train,
+model_4_history = model_4.fit(X_train_4, y_train,
                          epochs=epochs,
                          batch_size=batch_size,
                          verbose=2,
                          validation_data=(X_test_4, y_test))
 
- model_3 = keras.Sequential([
+model_3 = keras.Sequential([
          keras.layers.Dense(num_neurons, activation='relu'),
          keras.layers.Dense(1)
      ])
 
- model_3.compile(optimizer=keras.optimizers.SGD(learning_rate=lr),
+model_3.compile(optimizer=keras.optimizers.SGD(learning_rate=lr),
                  loss=keras.losses.MeanSquaredError(),
                  metrics=['mse'])
 
 #     # learn the network
- model_3_history = model_3.fit(X_train_3, y_train,
+model_3_history = model_3.fit(X_train_3, y_train,
                          epochs=epochs,
                          batch_size=batch_size,
                          verbose=2,
                          validation_data=(X_test_3, y_test))
 
 
- mse_array = [baseline_history.history['val_mse'], model_6_history.history['val_mse'], 
+mse_array = [baseline_history.history['val_mse'], model_6_history.history['val_mse'], 
      model_5_history.history['val_mse'], model_4_history.history['val_mse'],
      model_3_history.history['val_mse']]
 
