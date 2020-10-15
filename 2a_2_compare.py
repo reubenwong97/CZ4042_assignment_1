@@ -93,6 +93,6 @@ model_5_history = model_5.fit(X_train_5, y_train,
                         verbose=2,
                         validation_data=(X_test_5, y_test))
 
-mse_array = [baseline_history.history, model_6_history.history, model_5_history.history]
+mse_array = [baseline_history.history['val_mse'], model_6_history.history['val_mse'], model_5_history.history['val_mse']]
 
 compare_subset_lengths(mse_array, 7, 'comparing_subset_performance', 'perfomance of models trained on subset of features', path='./figures/2a_2/')
