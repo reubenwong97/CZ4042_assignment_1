@@ -40,9 +40,10 @@ X_train_ = np.delete(X_train, [5], axis=1)
 X_test_ = np.delete(X_test, [5], axis=1)
 
 alternate = keras.Sequential([
-            keras.layers.Dense(num_neurons, activation='relu'),
-            keras.layers.Dense(1)
-        ])
+    keras.layers.Dense(num_neurons, activation='relu', kernel_initializer=tf.keras.initializers.GlorotUniform(seed=seed),
+                        kernel_regularizer=tf.keras.regularizers.l2(weight_decay), bias_regularizer=tf.keras.regularizers.l2(weight_decay)),
+    keras.layers.Dense(1)
+])
 
 alternate.compile(optimizer=keras.optimizers.SGD(learning_rate=lr),
             loss=keras.losses.MeanSquaredError(),
@@ -60,9 +61,10 @@ X_train = X_train[:, 5]
 X_test = X_test[:, 5]
 
 model = keras.Sequential([
-            keras.layers.Dense(num_neurons, activation='relu'),
-            keras.layers.Dense(1)
-        ])
+    keras.layers.Dense(num_neurons, activation='relu', kernel_initializer=tf.keras.initializers.GlorotUniform(seed=seed),
+                        kernel_regularizer=tf.keras.regularizers.l2(weight_decay), bias_regularizer=tf.keras.regularizers.l2(weight_decay)),
+    keras.layers.Dense(1)
+])
 
 model.compile(optimizer=keras.optimizers.SGD(learning_rate=lr),
             loss=keras.losses.MeanSquaredError(),
