@@ -65,7 +65,7 @@ baseline_history = baseline.fit(X_train, y_train,
                         verbose = 2,
                         validation_data=(X_test, y_test))
 
-final_mse = np.mean(baseline_history.history['val_mse'][-5:])
+final_mse = np.mean(baseline_history.history['val_mse'][-1])
 baseline_mse = baseline_history.history['val_mse']
 np.save('./data/2a_2/baseline_test_mse.npy', baseline_history.history['val_mse'])
 np.save('./data/2a_2/baseline_train_mse.npy', baseline_history.history['mse'])
@@ -85,7 +85,7 @@ best_mse = final_mse
 
 for j in range(original_feature_len-1):
 # maximum number of times to loop -> loop until 1 feature left
-    print(f'...subset length {original_feature_len-j}...')
+    print(f'...subset length {original_feature_len-j-1}...')
     best_feature_idx = None
     subset_mses = [] 
     first_xes = []
@@ -114,7 +114,7 @@ for j in range(original_feature_len-1):
                                 verbose=2,
                                 validation_data=(X_test_, y_test))
 
-        last_mse = np.mean(history.history['val_mse'][-5:])
+        last_mse = np.mean(history.history['val_mse'][-1])
         subset_mse_histories.append(history.history['val_mse'])
         subset_mses.append(last_mse)
         first_xes.append((f'subset length: {len(X_train_[0])}', X_train_[0]))
@@ -149,4 +149,4 @@ print("...ALL MSES...\n", ALL_MSES)
 print("...FIRST ROWS...\n", FIRST_ROW_X)
 
 # plots
-compare_feature_losses(BEST_MSE_HIST, [4, 2, 6, 0, 3, 1], 'full_rse_sweep', 'full_rse_sweep best features', baseline=baseline_mse, path='./figures/2a_2/auto_full/')
+compare_feature_losses(BEST_MSE_HIST, [4, 2, 6, 0, 3, 1], 'full_rse_sweep_no_mean', 'full_rse_sweep best features', baseline=baseline_mse, path='./figures/2a_2/auto_full/')
