@@ -36,14 +36,14 @@ X_test = norm_scale(X_test)
 ############################################# handling dataset #############################################
 X_train_all = X_train
 X_test_all = X_test
-X_train_6 = np.delete(X_train, [4], axis=1)
-X_test_6 = np.delete(X_test, [4], axis=1)
-X_train_5 = np.delete(X_train_6, [2], axis=1)
-X_test_5 = np.delete(X_test_6, [2], axis=1)
-X_train_4 = np.delete(X_train_5, [4], axis=1)
-X_test_4 = np.delete(X_test_5, [4], axis=1)
-X_train_3 = np.delete(X_train_4, [0], axis=1)
-X_test_3 = np.delete(X_test_4, [0], axis=1)
+X_train_6 = np.delete(X_train, [0], axis=1)
+X_test_6 = np.delete(X_test, [0], axis=1)
+X_train_5 = np.delete(X_train_6, [1], axis=1)
+X_test_5 = np.delete(X_test_6, [1], axis=1)
+X_train_4 = np.delete(X_train_5, [1], axis=1)
+X_test_4 = np.delete(X_test_5, [1], axis=1)
+X_train_3 = np.delete(X_train_4, [1], axis=1)
+X_test_3 = np.delete(X_test_4, [1], axis=1)
 ############################################# handling dataset #############################################
 
 # baseline to compare to
@@ -101,52 +101,52 @@ model_5_history = model_5.fit(X_train_5, y_train,
                         validation_data=(X_test_5, y_test))
 
 # model on subset length 5
-# model_4 = keras.Sequential([
-#         keras.layers.Dense(num_neurons, activation='relu'),
-#         keras.layers.Dense(1)
-#     ])
+ model_4 = keras.Sequential([
+         keras.layers.Dense(num_neurons, activation='relu'),
+         keras.layers.Dense(1)
+     ])
 
-# model_4.compile(optimizer=keras.optimizers.SGD(learning_rate=lr),
-#                 loss=keras.losses.MeanSquaredError(),
-#                 metrics=['mse'])
-
-#     # learn the network
-# model_4_history = model_4.fit(X_train_4, y_train,
-#                         epochs=epochs,
-#                         batch_size=batch_size,
-#                         verbose=2,
-#                         validation_data=(X_test_4, y_test))
-
-# model_3 = keras.Sequential([
-#         keras.layers.Dense(num_neurons, activation='relu'),
-#         keras.layers.Dense(1)
-#     ])
-
-# model_3.compile(optimizer=keras.optimizers.SGD(learning_rate=lr),
-#                 loss=keras.losses.MeanSquaredError(),
-#                 metrics=['mse'])
+ model_4.compile(optimizer=keras.optimizers.SGD(learning_rate=lr),
+                 loss=keras.losses.MeanSquaredError(),
+                 metrics=['mse'])
 
 #     # learn the network
-# model_3_history = model_3.fit(X_train_3, y_train,
-#                         epochs=epochs,
-#                         batch_size=batch_size,
-#                         verbose=2,
-#                         validation_data=(X_test_3, y_test))
+ model_4_history = model_4.fit(X_train_4, y_train,
+                         epochs=epochs,
+                         batch_size=batch_size,
+                         verbose=2,
+                         validation_data=(X_test_4, y_test))
+
+ model_3 = keras.Sequential([
+         keras.layers.Dense(num_neurons, activation='relu'),
+         keras.layers.Dense(1)
+     ])
+
+ model_3.compile(optimizer=keras.optimizers.SGD(learning_rate=lr),
+                 loss=keras.losses.MeanSquaredError(),
+                 metrics=['mse'])
+
+#     # learn the network
+ model_3_history = model_3.fit(X_train_3, y_train,
+                         epochs=epochs,
+                         batch_size=batch_size,
+                         verbose=2,
+                         validation_data=(X_test_3, y_test))
 
 
-# mse_array = [baseline_history.history['val_mse'], model_6_history.history['val_mse'], 
-#     model_5_history.history['val_mse'], model_4_history.history['val_mse'],
-#     model_3_history.history['val_mse']]
+ mse_array = [baseline_history.history['val_mse'], model_6_history.history['val_mse'], 
+     model_5_history.history['val_mse'], model_4_history.history['val_mse'],
+     model_3_history.history['val_mse']]
 
-mse_array = [baseline_history.history['val_mse'], model_6_history.history['val_mse'], 
-    model_5_history.history['val_mse']]
+#mse_array = [baseline_history.history['val_mse'], model_6_history.history['val_mse'], 
+ #   model_5_history.history['val_mse']]
 
 last_mse_array = [baseline_history.history['val_mse'][-1], model_6_history.history['val_mse'][-1], 
-    model_5_history.history['val_mse'][-1]]
+    model_5_history.history['val_mse'][-1], model_4_history.history['val_mse'][-1], model_3_history.history['val_mse'][-1]]
 
 first_rows = [X_train_all[0], X_train_6[0], X_train_5[0]]
 
-compare_subset_lengths(mse_array, 7, 'comparing_subset_567', 'perfomance of models trained on subset of features', path='./figures/2a_2/')
+compare_subset_lengths(mse_array, 7, 'comparing_subset_34567_new0111', 'perfomance of models trained on subset of features', path='./figures/2a_2/')
 
 print("...LAST MSE...\n", last_mse_array)
 print("...FIRST ROWS...\n", first_rows)

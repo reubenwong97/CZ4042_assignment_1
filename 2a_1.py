@@ -55,3 +55,5 @@ history =starter_model.fit(X_train, y_train,
 plot_loss(history.history, 'training_val_losses', 'mse', 'epochs vs mse losses', path='./figures/2a_1/')
 plot_predictions(starter_model, X_test, y_test, 50, 'predictions_targets_scatter', 'predictions and targets', path='./figures/2a_1/')
 plot_predictions(starter_model, X_test, y_test, 50, 'predictions_targets_line', 'predictions and targets', scatter=False,path='./figures/2a_1/')
+
+print(history.history['val_mse'])
