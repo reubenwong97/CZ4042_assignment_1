@@ -1,6 +1,6 @@
 # for random debugging
 import numpy as np
-from util.plots import compare_feature_losses, plot_loss
+from util.plots import compare_feature_losses, plot_loss, compare_models
 import tensorflow as tf
 from sklearn.model_selection import train_test_split
 from util.scaler import norm_scale
@@ -36,6 +36,25 @@ X_train, X_test, y_train, y_test = train_test_split(X_data, Y_data, test_size=0.
 X_train = norm_scale(X_train)
 X_test = norm_scale(X_test)
 
+X_train_ = np.delete(X_train, [5], axis=1)
+X_test_ = np.delete(X_test, [5], axis=1)
+
+alternate = keras.Sequential([
+            keras.layers.Dense(num_neurons, activation='relu'),
+            keras.layers.Dense(1)
+        ])
+
+alternate.compile(optimizer=keras.optimizers.SGD(learning_rate=lr),
+            loss=keras.losses.MeanSquaredError(),
+            metrics=['mse'])
+
+# learn the network
+alt_history = alternate.fit(X_train_, y_train,
+                        epochs=epochs,
+                        batch_size=batch_size,
+                        verbose=2,
+                        validation_data=(X_test_, y_test))
+
 # train only on 5th feature
 X_train = X_train[:, 5]
 X_test = X_test[:, 5]
@@ -57,3 +76,6 @@ history = model.fit(X_train, y_train,
                         validation_data=(X_test, y_test))
 
 plot_loss(history.history, 'debug_loss', 'mse', 'loss on 1 feature', path='./figures/2a_2/auto_full/')
+plot_loss(alt_history.history, 'alt_debug_loss', 'mse', 'loss on other features', path='./figures/2a_2/auto_full/')
+
+compare_models(history.history, alt_history.history, 'mse', '1_feature', 'other_features', 'comparing_1_others', 'comparing_1_others', path='./figures/2a_2/auto_full/')

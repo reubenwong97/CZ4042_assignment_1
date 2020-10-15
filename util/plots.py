@@ -66,8 +66,10 @@ def plot_val_losses(mse_array, name, title, path=None):
 
     fig.savefig(path+name) if path else fig.savefig('./figures/'+name)
 
-def compare_feature_losses(mse_array, idx_array, name ,title, path=None):
+def compare_feature_losses(mse_array, idx_array, name ,title, baseline=None, path=None):
     fig = plt.figure()
+    if baseline:
+        plt.plot(baseline, label='trained_all_features')
     for i, mse_hist in enumerate(mse_array):
         feature_dropped = str(idx_array[i])
         plt.plot(mse_hist, label='dropped_'+feature_dropped+'_feature')
