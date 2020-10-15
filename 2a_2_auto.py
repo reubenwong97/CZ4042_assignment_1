@@ -78,6 +78,7 @@ BEST_MSE_HIST = []
 BEST_IDXS = []
 ALL_MSES = []
 ALL_MSE_HIST = []
+FIRST_ROW_X = []
 
 original_feature_len = X_train.shape[1]
 best_mse = np.inf
@@ -88,6 +89,7 @@ for j in range(original_feature_len):
     has_improved = False
     best_feature_idx = None
     subset_mses = [] 
+    first_xes = []
 
     # loop for searching through inputs
     for i in range(X_train.shape[1]):
@@ -115,6 +117,7 @@ for j in range(original_feature_len):
         last_mse = np.mean(history.history['val_mse'][-5:])
         ALL_MSE_HIST.append(history.history['val_mse'])
         subset_mses.append(last_mse)
+        first_xes.append((f'subset length: {len(X_train_[0])}', X_train_[0]))
         # include tolerance for noise
         if last_mse < best_mse+TOLERANCE:
             has_improved = True
@@ -123,6 +126,7 @@ for j in range(original_feature_len):
             best_mse_history = history.history['val_mse']
 
     ALL_MSES.append(subset_mses)	
+    FIRST_ROW_X.append(first_xes)
 
     if has_improved:
         # record data
@@ -148,3 +152,4 @@ np.save('./data/2a_2/auto/all_mse_hist_7.npy', ALL_MSE_HIST)
 print("...BEST MSES...\n", BEST_MSES)
 print("...BEST IDXS...\n", BEST_IDXS)
 print("...ALL MSES...\n", ALL_MSES)
+print("...FIRST ROWS...\n", FIRST_ROW_X)
