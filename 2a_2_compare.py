@@ -141,6 +141,9 @@ mse_array = [baseline_history.history['val_mse'], model_6_history.history['val_m
 last_mse_array = [baseline_history.history['val_mse'][-1], model_6_history.history['val_mse'][-1], 
     model_5_history.history['val_mse'][-1]]
 
+first_rows = [X_train_all[0], X_train_6[0], X_train_5[0]]
+
 compare_subset_lengths(mse_array, 7, 'comparing_subset_567', 'perfomance of models trained on subset of features', path='./figures/2a_2/')
 
 print("...LAST MSE...\n", last_mse_array)
+print("...FIRST ROWS...\n", first_rows)
