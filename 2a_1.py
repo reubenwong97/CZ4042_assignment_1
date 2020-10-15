@@ -35,7 +35,8 @@ X_test = norm_scale(X_test)
 
 # create a network
 starter_model = keras.Sequential([
-    keras.layers.Dense(num_neurons, activation='relu'),
+    keras.layers.Dense(num_neurons, activation='relu', kernel_initializer=tf.keras.initializers.GlorotUniform(seed=seed),
+                        kernel_regularizer=tf.keras.regularizers.l2(weight_decay), bias_regularizer=tf.keras.regularizers.l2(weight_decay)),
     keras.layers.Dense(1)
 ])
 

@@ -48,7 +48,8 @@ X_test_3 = np.delete(X_test_4, [0], axis=1)
 
 # baseline to compare to
 baseline = keras.Sequential([
-        keras.layers.Dense(num_neurons, activation='relu', kernel_initializer=tf.keras.initializers.GlorotUniform(seed=seed)),
+        keras.layers.Dense(num_neurons, activation='relu', kernel_initializer=tf.keras.initializers.GlorotUniform(seed=seed),
+                            kernel_regularizer=tf.keras.regularizers.l2(weight_decay), bias_regularizer=tf.keras.regularizers.l2(weight_decay)),
         keras.layers.Dense(1)
     ])
 
@@ -65,9 +66,10 @@ baseline_history = baseline.fit(X_train_all, y_train,
 
 # model on subset length 6
 model_6 = keras.Sequential([
-        keras.layers.Dense(num_neurons, activation='relu', kernel_initializer=tf.keras.initializers.GlorotUniform(seed=seed)),
-        keras.layers.Dense(1)
-    ])
+    keras.layers.Dense(num_neurons, activation='relu', kernel_initializer=tf.keras.initializers.GlorotUniform(seed=seed),
+                        kernel_regularizer=tf.keras.regularizers.l2(weight_decay), bias_regularizer=tf.keras.regularizers.l2(weight_decay)),
+    keras.layers.Dense(1)
+])
 
 model_6.compile(optimizer=keras.optimizers.SGD(learning_rate=lr),
                 loss=keras.losses.MeanSquaredError(),
@@ -82,7 +84,8 @@ model_6_history = model_6.fit(X_train_6, y_train,
 
 # model on subset length 5
 model_5 = keras.Sequential([
-        keras.layers.Dense(num_neurons, activation='relu', kernel_initializer=tf.keras.initializers.GlorotUniform(seed=seed)),
+        keras.layers.Dense(num_neurons, activation='relu', kernel_initializer=tf.keras.initializers.GlorotUniform(seed=seed),
+                            kernel_regularizer=tf.keras.regularizers.l2(weight_decay), bias_regularizer=tf.keras.regularizers.l2(weight_decay)),
         keras.layers.Dense(1)
     ])
 

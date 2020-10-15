@@ -50,9 +50,10 @@ X_test = norm_scale(X_test)
 
 # baseline to compare to
 baseline = keras.Sequential([
-        keras.layers.Dense(num_neurons, activation='relu', kernel_initializer=tf.keras.initializers.GlorotUniform(seed=seed)),
-        keras.layers.Dense(1)
-    ])
+    keras.layers.Dense(num_neurons, activation='relu', kernel_initializer=tf.keras.initializers.GlorotUniform(seed=seed),
+                        kernel_regularizer=tf.keras.regularizers.l2(weight_decay), bias_regularizer=tf.keras.regularizers.l2(weight_decay)),
+    keras.layers.Dense(1)
+])
 
 baseline.compile(optimizer=keras.optimizers.SGD(learning_rate=lr),
                 loss=keras.losses.MeanSquaredError(),
@@ -99,7 +100,8 @@ for j in range(original_feature_len-1):
         X_test_ = np.delete(X_test, [i], axis=1)
 
         model = keras.Sequential([
-            keras.layers.Dense(num_neurons, activation='relu', kernel_initializer=tf.keras.initializers.GlorotUniform(seed=seed)),
+            keras.layers.Dense(num_neurons, activation='relu', kernel_initializer=tf.keras.initializers.GlorotUniform(seed=seed),
+                                kernel_regularizer=tf.keras.regularizers.l2(weight_decay), bias_regularizer=tf.keras.regularizers.l2(weight_decay)),
             keras.layers.Dense(1)
         ])
 
