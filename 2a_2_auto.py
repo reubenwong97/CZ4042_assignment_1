@@ -77,6 +77,7 @@ BEST_MSES = []
 BEST_MSE_HIST = []
 BEST_IDXS = []
 ALL_MSES = []
+ALL_MSE_HIST = []
 
 original_feature_len = X_train.shape[1]
 best_mse = np.inf
@@ -112,6 +113,7 @@ for j in range(original_feature_len):
                                 validation_data=(X_test_, y_test))
 
         last_mse = np.mean(history.history['val_mse'][-5:])
+        ALL_MSE_HIST.append(history.history['val_mse'])
         subset_mses.append(last_mse)
         # include tolerance for noise
         if last_mse < best_mse+TOLERANCE:
@@ -140,6 +142,8 @@ for j in range(original_feature_len):
 np.save('./data/2a_2/auto/best_mse_scores.npy', BEST_MSES)
 np.save('./data/2a_2/auto/best_mse_history.npy', BEST_MSE_HIST)
 np.save('./data/2a_2/auto/best_idxs.npy', BEST_IDXS)
+np.save('./data/2a_2/auto/all_mses_7.npy', ALL_MSES)
+np.save('./data/2a_2/auto/all_mse_hist_7.npy', ALL_MSE_HIST)
 
 print("...BEST MSES...\n", BEST_MSES)
 print("...BEST IDXS...\n", BEST_IDXS)

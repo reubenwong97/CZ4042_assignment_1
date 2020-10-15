@@ -72,6 +72,7 @@ np.save('./data/2a_2/baseline_train_mse.npy', baseline_history.history['mse'])
 # informed that while cross-validation is correct, not done for 
 # this assignment due to time required
 
+TOLERANCE = 0.0002
 BEST_MSES = []
 BEST_MSE_HIST = []
 BEST_IDXS = []
@@ -112,7 +113,7 @@ for i in range(X_train.shape[1]):
     subset_mses.append(last_mse)
     ALL_MSE_HIST.append(history.history['val_mse'])
     # include tolerance for noise
-    if last_mse < best_mse+0.0002:
+    if last_mse < best_mse+TOLERANCE:
         has_improved = True
         best_mse = last_mse
         best_feature_idx = i
@@ -134,6 +135,8 @@ if has_improved:
 np.save('./data/2a_2/manual/best_mse_scores_7.npy', BEST_MSES)
 np.save('./data/2a_2/manual/best_mse_history_7.npy', BEST_MSE_HIST)
 np.save('./data/2a_2/manual/best_idxs.npy_7', BEST_IDXS)
+np.save('./data/2a_2/manual/all_mses_7.npy', ALL_MSES)
+np.save('./data/2a_2/manual/all_mse_hist_7.npy', ALL_MSE_HIST)
 
 print("...BEST MSES...\n", BEST_MSES)
 print("...BEST IDXS...\n", BEST_IDXS)
