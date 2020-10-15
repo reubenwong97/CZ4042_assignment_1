@@ -131,9 +131,9 @@ if has_improved:
     X_test = np.delete(X_test, [best_feature_idx], axis=1)
 
 # save arrays
-np.save('./data/2a_2/manual/best_mse_scores.npy', BEST_MSES)
-np.save('./data/2a_2/manual/best_mse_history.npy', BEST_MSE_HIST)
-np.save('./data/2a_2/manual/best_idxs.npy', BEST_IDXS)
+np.save('./data/2a_2/manual/best_mse_scores_7.npy', BEST_MSES)
+np.save('./data/2a_2/manual/best_mse_history_7.npy', BEST_MSE_HIST)
+np.save('./data/2a_2/manual/best_idxs.npy_7', BEST_IDXS)
 
 print("...BEST MSES...\n", BEST_MSES)
 print("...BEST IDXS...\n", BEST_IDXS)
