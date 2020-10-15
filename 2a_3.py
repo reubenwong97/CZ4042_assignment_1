@@ -9,7 +9,7 @@ from util.plots import plot_loss, plot_predictions, compare_subset_lengths, comp
 NUM_CLASSES = 7
 
 # determined from early stopping
-epochs = 40
+epochs = 75
 batch_size = 8
 num_neurons = 10
 weight_decay = 10e-3
@@ -147,5 +147,5 @@ histories = [hist_3, hist_4_drop, hist_4_nodrop, hist_5_drop, hist_5_nodrop]
 mse_array = [history.history['val_mse'] for history in histories]
 names = ['3_layer', '4_layer_dropout', '4_layer_nodropout', '5_layer_dropout', '5_layer_nodropout']
 
-compare_more_models(mse_array, names, 'dropout_analysis', 'comparison: models with / without dropout',
+compare_more_models(mse_array, names, 'dropout_analysis_75_epochs', 'comparison: models with / without dropout',
                         path='./figures/2a_3/')
