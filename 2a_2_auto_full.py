@@ -50,7 +50,7 @@ X_test = norm_scale(X_test)
 
 # baseline to compare to
 baseline = keras.Sequential([
-        keras.layers.Dense(num_neurons, activation='relu'),
+        keras.layers.Dense(num_neurons, activation='relu', kernel_initializer=tf.keras.initializers.GlorotUniform(seed=seed)),
         keras.layers.Dense(1)
     ])
 
@@ -99,7 +99,7 @@ for j in range(original_feature_len-1):
         X_test_ = np.delete(X_test, [i], axis=1)
 
         model = keras.Sequential([
-            keras.layers.Dense(num_neurons, activation='relu'),
+            keras.layers.Dense(num_neurons, activation='relu', kernel_initializer=tf.keras.initializers.GlorotUniform(seed=seed)),
             keras.layers.Dense(1)
         ])
 
