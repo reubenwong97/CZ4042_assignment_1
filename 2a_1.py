@@ -9,7 +9,7 @@ from util.plots import plot_loss, plot_predictions
 NUM_CLASSES = 7
 
 # determined from early stopping
-epochs = 300
+epochs = 50
 batch_size = 8
 num_neurons = 10
 weight_decay = 10e-3
