@@ -70,8 +70,8 @@ baseline_history = baseline.fit(X_train, y_train,
 
 final_mse = np.mean(baseline_history.history['val_mse'][-1])
 baseline_mse = baseline_history.history['val_mse']
-np.save('./data/2a_2/baseline_test_mse.npy', baseline_history.history['val_mse'])
-np.save('./data/2a_2/baseline_train_mse.npy', baseline_history.history['mse'])
+np.save('./data/1b_2/baseline_test_mse.npy', baseline_history.history['val_mse'])
+np.save('./data/1b_2/baseline_train_mse.npy', baseline_history.history['mse'])
 
 # informed that while cross-validation is correct, not done for 
 # this assignment due to time required
