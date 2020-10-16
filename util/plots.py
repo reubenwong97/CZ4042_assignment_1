@@ -144,7 +144,7 @@ def plot_predictions(model, X_test, y_test, num_obs, plot_name, title, scatter=T
 
     fig.savefig(path+plot_name) if path else fig.savefig('./figures/'+plot_name)
 
-def plot_predictions_with_truth(model, X_test, y_test, num_obs, plot_name, title, path=None):
+def plot_predictions_with_XY(model, X_test, y_test, num_obs, plot_name, title, path=None):
     idx = np.arange(X_test.shape[0])
     np.random.shuffle(idx)
     X_test = X_test[idx]

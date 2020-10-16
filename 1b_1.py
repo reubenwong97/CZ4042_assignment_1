@@ -5,7 +5,7 @@ from sklearn.preprocessing import StandardScaler
 import numpy as np
 import matplotlib.pyplot as plt
 from util.scaler import norm_scale
-from util.plots import plot_loss, plot_predictions, plot_predictions_with_truth
+from util.plots import plot_loss, plot_predictions, plot_predictions_with_XY
 
 NUM_CLASSES = 7
 
@@ -58,6 +58,6 @@ plot_loss(history.history, 'training_val_losses', 'mse', 'epochs vs mse losses',
 plot_predictions(starter_model, X_test, y_test, 50, 'predictions_targets_scatter', 'predictions and targets', path='./figures/1b_1/')
 plot_predictions(starter_model, X_test, y_test, 50, 'predictions_targets_line', 'predictions and targets', scatter=False,path='./figures/1b_1/')
 
-plot_predictions_with_truth(starter_model, X_test, y_test, 50, 'predictions_along_X_Y', 'scatter of predictions about truth', path='./figures/1b_1/')
+plot_predictions_with_XY(starter_model, X_test, y_test, 50, 'predictions_along_X_Y', 'scatter of predictions about truth', path='./figures/1b_1/')
 
 print(history.history['val_mse'])
