@@ -36,8 +36,7 @@ X_test = scaler.transform(X_test)
 
 # create the model
 starter_model = keras.Sequential([
-    keras.layers.Dense(num_neurons, activation='relu', kernel_regularizer=keras.regularizers.l2(10e-6),
-                    bias_regularizer=keras.regularizers.l2(10e-6)),
+    keras.layers.Dense(num_neurons, activation='relu', kernel_regularizer=keras.regularizers.l2(10e-6)),
     keras.layers.Dense(NUM_CLASSES) # softmax not needed as loss specifies from_logits
 ])
 
