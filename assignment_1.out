@@ -1,5 +1,5 @@
 Epoch 1/500
-186/186 - 3s - loss: 0.7368 - accuracy: 0.7507 - sparse_categorical_crossentropy: 0.7367 - val_loss: 0.6670 - val_accuracy: 0.7790 - val_sparse_categorical_crossentropy: 0.6669
+186/186 - 4s - loss: 0.7368 - accuracy: 0.7507 - sparse_categorical_crossentropy: 0.7367 - val_loss: 0.6670 - val_accuracy: 0.7790 - val_sparse_categorical_crossentropy: 0.6669
 Epoch 2/500
 186/186 - 0s - loss: 0.6605 - accuracy: 0.7782 - sparse_categorical_crossentropy: 0.6604 - val_loss: 0.6383 - val_accuracy: 0.7790 - val_sparse_categorical_crossentropy: 0.6382
 Epoch 3/500

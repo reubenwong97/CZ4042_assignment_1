@@ -21,55 +21,55 @@ wandb: Currently logged in as: reubenwong97 (use `wandb login --relogin` to forc
 wandb: wandb version 0.10.7 is available!  To upgrade, please run:
 wandb:  $ pip install wandb --upgrade
 wandb: Tracking run with wandb version 0.10.4
-wandb: Syncing run warm-valley-29
+wandb: Syncing run fluent-pond-30
 wandb: ⭐️ View project at https://wandb.ai/reubenwong97/nndl_assignment_1
-wandb: 🚀 View run at https://wandb.ai/reubenwong97/nndl_assignment_1/runs/13eibi9l
-wandb: Run data is saved locally in wandb/run-20201016_132541-13eibi9l
+wandb: 🚀 View run at https://wandb.ai/reubenwong97/nndl_assignment_1/runs/3fcsqz9n
+wandb: Run data is saved locally in wandb/run-20201016_133654-3fcsqz9n
 wandb: Run `wandb off` to turn off syncing.
-2020-10-16 13:25:44.197541: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcuda.so.1
-2020-10-16 13:25:44.219539: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1561] Found device 0 with properties: 
+2020-10-16 13:36:56.968856: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcuda.so.1
+2020-10-16 13:36:56.991113: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1561] Found device 0 with properties: 
 pciBusID: 0000:37:00.0 name: Tesla V100-PCIE-32GB computeCapability: 7.0
 coreClock: 1.38GHz coreCount: 80 deviceMemorySize: 31.75GiB deviceMemoryBandwidth: 836.37GiB/s
-2020-10-16 13:25:44.222689: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudart.so.10.1
-2020-10-16 13:25:44.229777: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcublas.so.10
-2020-10-16 13:25:44.233578: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcufft.so.10
-2020-10-16 13:25:44.237938: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcurand.so.10
-2020-10-16 13:25:44.242005: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusolver.so.10
-2020-10-16 13:25:44.246108: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusparse.so.10
-2020-10-16 13:25:44.252765: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudnn.so.7
-2020-10-16 13:25:44.255596: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1703] Adding visible gpu devices: 0
-2020-10-16 13:25:44.255975: I tensorflow/core/platform/cpu_feature_guard.cc:143] Your CPU supports instructions that this TensorFlow binary was not compiled to use: SSE4.1 SSE4.2 AVX AVX2 AVX512F FMA
-2020-10-16 13:25:44.263590: I tensorflow/core/platform/profile_utils/cpu_utils.cc:102] CPU Frequency: 2600000000 Hz
-2020-10-16 13:25:44.264074: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x555559bb2660 initialized for platform Host (this does not guarantee that XLA will be used). Devices:
-2020-10-16 13:25:44.264102: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): Host, Default Version
-2020-10-16 13:25:44.265784: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1561] Found device 0 with properties: 
+2020-10-16 13:36:56.993469: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudart.so.10.1
+2020-10-16 13:36:57.000453: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcublas.so.10
+2020-10-16 13:36:57.004872: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcufft.so.10
+2020-10-16 13:36:57.007188: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcurand.so.10
+2020-10-16 13:36:57.010806: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusolver.so.10
+2020-10-16 13:36:57.015065: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusparse.so.10
+2020-10-16 13:36:57.020242: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudnn.so.7
+2020-10-16 13:36:57.023033: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1703] Adding visible gpu devices: 0
+2020-10-16 13:36:57.023428: I tensorflow/core/platform/cpu_feature_guard.cc:143] Your CPU supports instructions that this TensorFlow binary was not compiled to use: SSE4.1 SSE4.2 AVX AVX2 AVX512F FMA
+2020-10-16 13:36:57.030705: I tensorflow/core/platform/profile_utils/cpu_utils.cc:102] CPU Frequency: 2600000000 Hz
+2020-10-16 13:36:57.031124: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x555559bb58e0 initialized for platform Host (this does not guarantee that XLA will be used). Devices:
+2020-10-16 13:36:57.031149: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): Host, Default Version
+2020-10-16 13:36:57.032702: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1561] Found device 0 with properties: 
 pciBusID: 0000:37:00.0 name: Tesla V100-PCIE-32GB computeCapability: 7.0
 coreClock: 1.38GHz coreCount: 80 deviceMemorySize: 31.75GiB deviceMemoryBandwidth: 836.37GiB/s
-2020-10-16 13:25:44.265891: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudart.so.10.1
-2020-10-16 13:25:44.265903: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcublas.so.10
-2020-10-16 13:25:44.265913: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcufft.so.10
-2020-10-16 13:25:44.265922: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcurand.so.10
-2020-10-16 13:25:44.265930: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusolver.so.10
-2020-10-16 13:25:44.265939: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusparse.so.10
-2020-10-16 13:25:44.265948: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudnn.so.7
-2020-10-16 13:25:44.268555: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1703] Adding visible gpu devices: 0
-2020-10-16 13:25:44.268618: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudart.so.10.1
-2020-10-16 13:25:44.374323: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1102] Device interconnect StreamExecutor with strength 1 edge matrix:
-2020-10-16 13:25:44.374354: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1108]      0 
-2020-10-16 13:25:44.374362: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1121] 0:   N 
-2020-10-16 13:25:44.378847: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1247] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 30261 MB memory) -> physical GPU (device: 0, name: Tesla V100-PCIE-32GB, pci bus id: 0000:37:00.0, compute capability: 7.0)
-2020-10-16 13:25:44.380988: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x55555a54f550 initialized for platform CUDA (this does not guarantee that XLA will be used). Devices:
-2020-10-16 13:25:44.381042: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): Tesla V100-PCIE-32GB, Compute Capability 7.0
-2020-10-16 13:25:45.613701: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcublas.so.10
+2020-10-16 13:36:57.032756: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudart.so.10.1
+2020-10-16 13:36:57.032766: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcublas.so.10
+2020-10-16 13:36:57.032775: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcufft.so.10
+2020-10-16 13:36:57.032783: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcurand.so.10
+2020-10-16 13:36:57.032791: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusolver.so.10
+2020-10-16 13:36:57.032799: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusparse.so.10
+2020-10-16 13:36:57.032808: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudnn.so.7
+2020-10-16 13:36:57.035342: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1703] Adding visible gpu devices: 0
+2020-10-16 13:36:57.035434: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudart.so.10.1
+2020-10-16 13:36:57.143172: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1102] Device interconnect StreamExecutor with strength 1 edge matrix:
+2020-10-16 13:36:57.143201: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1108]      0 
+2020-10-16 13:36:57.143208: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1121] 0:   N 
+2020-10-16 13:36:57.147300: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1247] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 30261 MB memory) -> physical GPU (device: 0, name: Tesla V100-PCIE-32GB, pci bus id: 0000:37:00.0, compute capability: 7.0)
+2020-10-16 13:36:57.149649: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x55555a552790 initialized for platform CUDA (this does not guarantee that XLA will be used). Devices:
+2020-10-16 13:36:57.149690: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): Tesla V100-PCIE-32GB, Compute Capability 7.0
+2020-10-16 13:36:58.380932: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcublas.so.10
 Traceback (most recent call last):
-  File "1a_2_test_optim.py", line 58, in <module>
-    plot_loss(history.history, 'full_test_train_loss', 'epochs vs loss', path='./figures/1a_2/')
+  File "1a_3_test_optim.py", line 59, in <module>
+    plot_loss(history.history, 'full_test_train_loss', 'epochs vs loss', path='./figures/1a_3/')
 TypeError: plot_loss() missing 1 required positional argument: 'title'
-wandb: Waiting for W&B process to finish, PID 40024
+wandb: Waiting for W&B process to finish, PID 43214
 wandb: Program failed with code 1.  Press ctrl-c to abort syncing.
-wandb: - 1.42MB of 1.42MB uploaded (0.00MB deduped)wandb: \ 1.52MB of 1.52MB uploaded (0.00MB deduped)wandb:                                                                                
-wandb: Find user logs for this run at: wandb/run-20201016_132541-13eibi9l/logs/debug.log
-wandb: Find internal logs for this run at: wandb/run-20201016_132541-13eibi9l/logs/debug-internal.log
+wandb: - 0.12MB of 0.12MB uploaded (0.00MB deduped)wandb: \ 0.22MB of 0.22MB uploaded (0.00MB deduped)wandb:                                                                                
+wandb: Find user logs for this run at: wandb/run-20201016_133654-3fcsqz9n/logs/debug.log
+wandb: Find internal logs for this run at: wandb/run-20201016_133654-3fcsqz9n/logs/debug-internal.log
 wandb: Run summary:
 wandb:                                 epoch 499
 wandb:                                  loss 0.20271
@@ -79,8 +79,8 @@ wandb:                              val_loss 0.23677
 wandb:                          val_accuracy 0.90439
 wandb:   val_sparse_categorical_crossentropy 0.23609
 wandb:                                 _step 499
-wandb:                              _runtime 170
-wandb:                            _timestamp 1602826111
+wandb:                              _runtime 169
+wandb:                            _timestamp 1602826783
 wandb:                         best_val_loss 0.23216
 wandb:                            best_epoch 392
 wandb: Run history:
@@ -92,9 +92,9 @@ wandb:                              val_loss █▄▂▂▂▁▁▁▁▁▁�
 wandb:                          val_accuracy ▁▅▇▇▇▇▇▇▇▇▇▇▇▇█████▇█▇█▇▇▇▇▇█▇█▇███▇▇▇▇▇
 wandb:   val_sparse_categorical_crossentropy █▄▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
 wandb:                                 _step ▁▁▁▂▂▂▂▂▂▃▃▃▃▃▄▄▄▄▄▄▅▅▅▅▅▅▆▆▆▆▆▇▇▇▇▇▇███
-wandb:                              _runtime ▁▁▁▂▂▂▂▂▂▃▃▃▃▃▄▄▄▄▄▄▅▅▅▅▅▆▆▆▆▆▆▇▇▇▇▇▇███
-wandb:                            _timestamp ▁▁▁▂▂▂▂▂▂▃▃▃▃▃▄▄▄▄▄▄▅▅▅▅▅▆▆▆▆▆▆▇▇▇▇▇▇███
+wandb:                              _runtime ▁▁▁▂▂▂▂▂▂▃▃▃▃▃▄▄▄▄▄▄▅▅▅▅▅▆▆▆▆▆▆▇▇▇▇▇████
+wandb:                            _timestamp ▁▁▁▂▂▂▂▂▂▃▃▃▃▃▄▄▄▄▄▄▅▅▅▅▅▆▆▆▆▆▆▇▇▇▇▇████
 wandb: 
 wandb: Synced 6 W&B file(s), 1 media file(s), 0 artifact file(s) and 2 other file(s)
 wandb: 
-wandb: Synced warm-valley-29: https://wandb.ai/reubenwong97/nndl_assignment_1/runs/13eibi9l
+wandb: Synced fluent-pond-30: https://wandb.ai/reubenwong97/nndl_assignment_1/runs/3fcsqz9n
