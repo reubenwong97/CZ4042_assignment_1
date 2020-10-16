@@ -67,6 +67,8 @@ model_3 = keras.Sequential([
                             bias_regularizer=keras.regularizers.l2(0.01)),
             keras.layers.Dense(NUM_CLASSES)
 ])
+
+# default learning rate at 0.01
 model_3.compile(optimizer='sgd',
                     loss=keras.losses.SparseCategoricalCrossentropy(from_logits=True),
                     metrics=['accuracy', keras.metrics.SparseCategoricalCrossentropy(from_logits=True)])

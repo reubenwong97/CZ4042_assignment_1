@@ -143,3 +143,21 @@ def plot_predictions(model, X_test, y_test, num_obs, plot_name, title, scatter=T
     plt.legend()
 
     fig.savefig(path+plot_name) if path else fig.savefig('./figures/'+plot_name)
+
+def plot_predictions_with_truth(model, X_test, y_test, num_obs, plot_name, title, path=None):
+    idx = np.arange(X_test.shape[0])
+    np.random.shuffle(idx)
+    X_test = X_test[idx]
+    y_test = y_test[idx]
+    # take a subset of data
+    X_test = X_test[0:num_obs, :]
+    y_test = y_test[0:num_obs]
+    predictions = model.predict(X_test)
+
+    fig = plt.figure()
+    plt.scatter(y_test, predictions, color='b')
+    plt.plot(np.linspace(np.min(y_test), 1, 100), np.np.linspace(np.min(y_test), 1, 100))
+    plt.xlabel('truth valyes')
+    plt.ylabel('predictions')
+
+    fig.savefig(path+plot_name) if path else fig.savefig('./figures/'+plot_name)

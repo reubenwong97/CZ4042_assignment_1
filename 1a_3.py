@@ -24,7 +24,7 @@ seed = 10
 np.random.seed(seed)
 tf.random.set_seed(seed)
 
-histories = {}
+histories = {} 
 
 #read train data
 train_input = np.genfromtxt('ctg_data_cleaned.csv', delimiter= ',')
