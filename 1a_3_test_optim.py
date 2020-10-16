@@ -55,6 +55,6 @@ history = model.fit(X_train, y_train,
                             validation_data=(X_test, y_test),
                             callbacks=[WandbCallback()])
 
-plot_acc(history.history, 'full_test_train_acc', 'epochs vs train_acc', path='./figures/1a_3/')
+plot_acc(history.history, 'full_test_train_acc', 'epochs vs acc', path='./figures/1a_3/')
 plot_loss(history.history, 'full_test_train_loss', 'epochs vs loss', path='./figures/1a_3/')
 ################################ END TEST #####################################
