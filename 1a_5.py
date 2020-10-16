@@ -63,8 +63,8 @@ plot_loss(history_4.history, 'full_test_train_loss', 'sparse_categorical_crossen
 
 # 3 layer optimum model
 model_3 = keras.Sequential([
-            keras.layers.Dense(10, activation='relu', kernel_regularizer=keras.regularizers.l2(10e-6),
-                            bias_regularizer=keras.regularizers.l2(10e-6)),
+            keras.layers.Dense(10, activation='relu', kernel_regularizer=keras.regularizers.l2(0.01),
+                            bias_regularizer=keras.regularizers.l2(0.01)),
             keras.layers.Dense(NUM_CLASSES)
 ])
 model_3.compile(optimizer='sgd',
