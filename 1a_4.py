@@ -17,7 +17,7 @@ WEIGHT_DECAYS = [0, 10e-3, 10e-6, 10e-9, 10e-12]
 # param to optimize
 
 # validation loss stabalises at around 250 epochs -> 300 epochs for plotting
-epochs = 350
+epochs = 300
 batch_size = 32
 num_neurons = 20
 seed = 10
