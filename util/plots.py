@@ -16,7 +16,7 @@ def plot_acc(history, name, title, with_val=True, path=None):
     fig = plt.figure()
     plt.plot(history['accuracy'], label='train accuracy')
     if with_val:
-        plt.plot(history['val_accuracy'], label='validation accuracy')
+        plt.plot(history['val_accuracy'], label='test accuracy')
     plt.ylabel('accuracy')
     plt.xlabel('epochs')
     plt.title(title)
