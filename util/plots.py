@@ -156,7 +156,7 @@ def plot_predictions_with_truth(model, X_test, y_test, num_obs, plot_name, title
 
     fig = plt.figure()
     plt.scatter(y_test, predictions, color='b')
-    plt.plot(np.linspace(np.min(y_test), 1, 100), np.np.linspace(np.min(y_test), 1, 100))
+    plt.plot(np.linspace(np.min(y_test), 1, 100), np.linspace(np.min(y_test), 1, 100))
     plt.xlabel('truth valyes')
     plt.ylabel('predictions')
 
