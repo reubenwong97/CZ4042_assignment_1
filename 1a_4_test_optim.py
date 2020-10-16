@@ -17,7 +17,7 @@ NUM_CLASSES = 3
 # validation loss stabalises at around 250 epochs -> 500 epochs for plotting
 epochs = 500
 OPTIM_BATCH_SIZE = 8
-OPTIM_NUM_NEURONS = 20
+OPTIM_NUM_NEURONS = 10
 OPTIM_WEIGHT_DECAY = 10e-6
 seed = 10
 
