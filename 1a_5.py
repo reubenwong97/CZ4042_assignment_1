@@ -39,10 +39,10 @@ X_test = scaler.transform(X_test)
 
 ################################# TEST #######################################
 model_4 = keras.Sequential([
-            keras.layers.Dense(num_neurons, activation='relu', kernel_regularizer=keras.regularizers.l2(weight_decay),
-                            bias_regularizer=keras.regularizers.l2(weight_decay)),
-            keras.layers.Dense(num_neurons, activation='relu', kernel_regularizer=keras.regularizers.l2(weight_decay),
-                            bias_regularizer=keras.regularizers.l2(weight_decay)),
+            keras.layers.Dense(10, activation='relu', kernel_regularizer=keras.regularizers.l2(10e-6),
+                            bias_regularizer=keras.regularizers.l2(10e-6)),
+            keras.layers.Dense(10, activation='relu', kernel_regularizer=keras.regularizers.l2(10e-6),
+                            bias_regularizer=keras.regularizers.l2(10e-6)),
             keras.layers.Dense(NUM_CLASSES) # softmax not needed as loss specifies from_logits
         ])
 
@@ -54,7 +54,7 @@ model_4.compile(optimizer=keras.optimizers.SGD(learning_rate=0.01),
 history_4 = model_4.fit(X_train, y_train,
                             epochs=epochs,
                             verbose = 2,
-                            batch_size=batch_size,
+                            batch_size=32,
                             validation_data=(X_test, y_test),
                             callbacks=[WandbCallback()])
 
@@ -63,8 +63,8 @@ plot_loss(history_4.history, 'full_test_train_loss', 'sparse_categorical_crossen
 
 # 3 layer optimum model
 model_3 = keras.Sequential([
-            keras.layers.Dense(20, activation='relu', kernel_regularizer=keras.regularizers.l2(10e-6),
-                            bias_regularizer=keras.regularizers.l2(10e-6)),
+            keras.layers.Dense(10, activation='relu', kernel_regularizer=keras.regularizers.l2(0.01),
+                            bias_regularizer=keras.regularizers.l2(0.01)),
             keras.layers.Dense(NUM_CLASSES)
 ])
 model_3.compile(optimizer='sgd',
@@ -74,7 +74,7 @@ model_3.compile(optimizer='sgd',
 history_3 = model_3.fit(X_train, y_train,
                             epochs=epochs,
                             verbose = 2,
-                            batch_size=batch_size,
+                            batch_size=8,
                             validation_data=(X_test, y_test),
                             callbacks=[WandbCallback()])
 
