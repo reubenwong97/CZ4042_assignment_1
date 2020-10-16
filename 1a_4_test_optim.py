@@ -18,7 +18,7 @@ NUM_CLASSES = 3
 epochs = 500
 OPTIM_BATCH_SIZE = 8
 OPTIM_NUM_NEURONS = 10
-OPTIM_WEIGHT_DECAY = 10e-6
+OPTIM_WEIGHT_DECAY = 0.01
 seed = 10
 
 np.random.seed(seed)
