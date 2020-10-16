@@ -1,6 +1,7 @@
 import tensorflow as tf
 from tensorflow import keras
 from sklearn.model_selection import KFold, train_test_split
+from sklearn.preprocessing import MinMaxScaler
 from util.plots import plot_acc, plot_loss, plot_accs, plot_time, compare_models
 from util.scaler import scale
 from util.callbacks import TimeHistory
@@ -32,11 +33,11 @@ data_y = data_y-1
 
 # split and scale data to prevent leakage of distribution
 X_train, X_test, y_train, y_test = train_test_split(data_X, data_y, test_size=0.3, random_state=seed)
-#* only scale test here
-X_test = scale(X_test, np.min(X_train, axis=0), np.max(X_train, axis=0)) 
+scaler = MinMaxScaler()
+X_train = scaler.fit_transform(X_train)
+X_test = scaler.transform(X_test)
 
 ################################# TEST #######################################
-X_train = scale(X_train, np.min(X_train, axis=0), np.max(X_train, axis=0))
 model_4 = keras.Sequential([
             keras.layers.Dense(num_neurons, activation='relu', kernel_regularizer=keras.regularizers.l2(weight_decay),
                             bias_regularizer=keras.regularizers.l2(weight_decay)),

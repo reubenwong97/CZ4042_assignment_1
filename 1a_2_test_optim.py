@@ -37,7 +37,6 @@ X_train = scaler.fit_transform(X_train)
 X_test = scaler.transform(X_test)
 ################################# TEST #######################################
 OPTIM_BATCH_SIZE = 32
-X_train = scale(X_train, np.min(X_train, axis=0), np.max(X_train, axis=0))
 model = keras.Sequential([
             keras.layers.Dense(num_neurons, activation='relu', kernel_regularizer=keras.regularizers.l2(10e-6),
                             bias_regularizer=keras.regularizers.l2(10e-6)),

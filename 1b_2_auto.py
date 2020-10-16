@@ -5,6 +5,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 from util.scaler import norm_scale
 from util.plots import plot_loss, plot_predictions
+from sklearn.preprocessing import StandardScaler
 
 # pseudocode
 
@@ -45,8 +46,9 @@ Y_data = Y_data.reshape(Y_data.shape[0], 1)
 X_train, X_test, y_train, y_test = train_test_split(X_data, Y_data, test_size=0.3, shuffle=True, random_state=seed)
 
 # scale both, no CV here
-X_train = norm_scale(X_train, X_train)
-X_test = norm_scale(X_test, X_train)
+scaler = StandardScaler()
+X_train = scaler.fit_transform(X_train)
+X_test = scaler.transform(X_test)
 
 # baseline to compare to
 baseline = keras.Sequential([
