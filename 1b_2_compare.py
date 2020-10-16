@@ -46,10 +46,10 @@ X_train_4 = np.delete(X_train_5, [1], axis=1)
 X_test_4 = np.delete(X_test_5, [1], axis=1)
 X_train_3 = np.delete(X_train_4, [3], axis=1)
 X_test_3 = np.delete(X_test_4, [3], axis=1)
-X_train_2 = np.delete(X_train_3, [1], axis=1)
-X_test_2 = np.delete(X_test_3, [1], axis=1)
-X_train_1 = np.delete(X_train_2, [4], axis=1)
-X_test_1 = np.delete(X_test_2, [4], axis=1)
+X_train_2 = np.delete(X_train_3, [0], axis=1)
+X_test_2 = np.delete(X_test_3, [0], axis=1)
+X_train_1 = np.delete(X_train_2, [0], axis=1)
+X_test_1 = np.delete(X_test_2, [0], axis=1)
 ############################################# handling dataset #############################################
 
 # baseline to compare to

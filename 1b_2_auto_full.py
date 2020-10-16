@@ -153,4 +153,4 @@ print("...ALL MSES...\n", ALL_MSES)
 print("...FIRST ROWS...\n", FIRST_ROW_X)
 
 # plots
-compare_feature_losses(BEST_MSE_HIST, [1, 3, 4, 5, 2, 7], 'full_rse_sweep_no_mean', 'full_rse_sweep best features', baseline=baseline_mse, path='./figures/1b_2/auto_full/')
+compare_feature_losses(BEST_MSE_HIST, [1, 3, 4, 7, 2, 5], 'full_rse_sweep_no_mean', 'full_rse_sweep best features', baseline=baseline_mse, path='./figures/1b_2/auto_full/')
