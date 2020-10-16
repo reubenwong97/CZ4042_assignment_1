@@ -45,8 +45,8 @@ Y_data = Y_data.reshape(Y_data.shape[0], 1)
 X_train, X_test, y_train, y_test = train_test_split(X_data, Y_data, test_size=0.3, shuffle=True, random_state=seed)
 
 # scale both, no CV here
-X_train = norm_scale(X_train)
-X_test = norm_scale(X_test)
+X_train = norm_scale(X_train, X_train)
+X_test = norm_scale(X_test, X_train)
 
 # baseline to compare to
 baseline = keras.Sequential([
@@ -139,11 +139,11 @@ for j in range(original_feature_len-1):
     X_test = np.delete(X_test, [best_feature_idx], axis=1)
 
 # save arrays
-np.save('./data/2a_2/auto_full/best_mse_scores.npy', BEST_MSES)
-np.save('./data/2a_2/auto_full/best_mse_history.npy', BEST_MSE_HIST)
-np.save('./data/2a_2/auto_full/best_idxs.npy', BEST_IDXS)
-np.save('./data/2a_2/auto_full/all_mses.npy', ALL_MSES)
-np.save('./data/2a_2/auto_full/all_mse_hist.npy', ALL_MSE_HIST)
+np.save('./data/1b_2/auto_full/best_mse_scores.npy', BEST_MSES)
+np.save('./data/1b_2/auto_full/best_mse_history.npy', BEST_MSE_HIST)
+np.save('./data/1b_2/auto_full/best_idxs.npy', BEST_IDXS)
+np.save('./data/1b_2/auto_full/all_mses.npy', ALL_MSES)
+np.save('./data/1b_2/auto_full/all_mse_hist.npy', ALL_MSE_HIST)
 
 print("...BEST MSES...\n", BEST_MSES)
 print("...BEST IDXS...\n", BEST_IDXS)
@@ -151,4 +151,4 @@ print("...ALL MSES...\n", ALL_MSES)
 print("...FIRST ROWS...\n", FIRST_ROW_X)
 
 # plots
-compare_feature_losses(BEST_MSE_HIST, [1, 3, 4, 5, 2, 7], 'full_rse_sweep_no_mean', 'full_rse_sweep best features', baseline=baseline_mse, path='./figures/2a_2/auto_full/')
+compare_feature_losses(BEST_MSE_HIST, [1, 3, 4, 5, 2, 7], 'full_rse_sweep_no_mean', 'full_rse_sweep best features', baseline=baseline_mse, path='./figures/1b_2/auto_full/')

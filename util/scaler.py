@@ -4,5 +4,5 @@ import numpy as np
 def scale(X, X_min, X_max):
     return (X - X_min)/(X_max-X_min)
 
-def norm_scale(X):
-    return (X - np.mean(X, axis=0)) / np.std(X, axis=0)
+def norm_scale(X, X_train):
+    return (X - np.mean(X_train, axis=0)) / np.std(X_train, axis=0)

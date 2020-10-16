@@ -34,7 +34,7 @@ data_y = data_y-1
 # split and scale data to prevent leakage of distribution
 X_train, X_test, y_train, y_test = train_test_split(data_X, data_y, test_size=0.3, random_state=seed)
 #* only scale test here
-X_test = scale(X_test, np.min(X_test, axis=0), np.max(X_test, axis=0)) 
+X_test = scale(X_test, np.min(X_train, axis=0), np.max(X_train, axis=0)) 
 
 # perform splitting
 kf = KFold(n_splits=5, random_state=seed, shuffle=False)
@@ -58,7 +58,7 @@ for hp_i, weight_decay in enumerate(WEIGHT_DECAYS):
 
         #* normalise train and val seperately here
         X_train_ = scale(X_train_, np.min(X_train_, axis=0), np.max(X_train_, axis=0))
-        X_val = scale(X_val, np.min(X_val, axis=0), np.max(X_val, axis=0))
+        X_val = scale(X_val, np.min(X_train_, axis=0), np.max(X_train_, axis=0))
 
         # create the model: assume regularization is kept
         model = keras.Sequential([

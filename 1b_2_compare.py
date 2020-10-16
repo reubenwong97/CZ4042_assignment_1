@@ -30,8 +30,8 @@ Y_data = Y_data.reshape(Y_data.shape[0], 1)
 X_train, X_test, y_train, y_test = train_test_split(X_data, Y_data, test_size=0.3, shuffle=True, random_state=seed)
 
 # scale both, no CV here
-X_train = norm_scale(X_train)
-X_test = norm_scale(X_test)
+X_train = norm_scale(X_train, X_train)
+X_test = norm_scale(X_test, X_train)
 
 ############################################# handling dataset #############################################
 X_train_all = X_train
@@ -185,7 +185,7 @@ last_mse_array = [baseline_history.history['val_mse'][-1], model_6_history.histo
 
 first_rows = [X_train_all[0], X_train_6[0], X_train_5[0]]
 
-compare_subset_lengths(mse_array, 7, 'comparing_subset_1234567_new0111', 'perfomance of models trained on subset of features', path='./figures/2a_2/')
+compare_subset_lengths(mse_array, 7, 'comparing_subset_1234567_new0111', 'perfomance of models trained on subset of features', path='./figures/1b_2/')
 
 print("...LAST MSE...\n", last_mse_array)
 print("...FIRST ROWS...\n", first_rows)

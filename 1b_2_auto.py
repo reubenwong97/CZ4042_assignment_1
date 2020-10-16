@@ -24,7 +24,7 @@ from util.plots import plot_loss, plot_predictions
 NUM_CLASSES = 7
 
 # determined from early stopping
-epochs = 75
+epochs = 40
 batch_size = 8
 num_neurons = 10
 weight_decay = 10e-3
@@ -45,8 +45,8 @@ Y_data = Y_data.reshape(Y_data.shape[0], 1)
 X_train, X_test, y_train, y_test = train_test_split(X_data, Y_data, test_size=0.3, shuffle=True, random_state=seed)
 
 # scale both, no CV here
-X_train = norm_scale(X_train)
-X_test = norm_scale(X_test)
+X_train = norm_scale(X_train, X_train)
+X_test = norm_scale(X_test, X_train)
 
 # baseline to compare to
 baseline = keras.Sequential([
@@ -66,8 +66,8 @@ baseline_history = baseline.fit(X_train, y_train,
                         validation_data=(X_test, y_test))
 
 final_mse = np.mean(baseline_history.history['val_mse'][-5:])
-np.save('./data/2a_2/baseline_test_mse.npy', baseline_history.history['val_mse'])
-np.save('./data/2a_2/baseline_train_mse.npy', baseline_history.history['mse'])
+np.save('./data/1b_2/baseline_test_mse.npy', baseline_history.history['val_mse'])
+np.save('./data/1b_2/baseline_train_mse.npy', baseline_history.history['mse'])
 
 # informed that while cross-validation is correct, not done for 
 # this assignment due to time required
@@ -143,11 +143,11 @@ for j in range(original_feature_len):
         break
 
 # save arrays
-np.save('./data/2a_2/auto/best_mse_scores.npy', BEST_MSES)
-np.save('./data/2a_2/auto/best_mse_history.npy', BEST_MSE_HIST)
-np.save('./data/2a_2/auto/best_idxs.npy', BEST_IDXS)
-np.save('./data/2a_2/auto/all_mses_7.npy', ALL_MSES)
-np.save('./data/2a_2/auto/all_mse_hist_7.npy', ALL_MSE_HIST)
+np.save('./data/1b_2/auto/best_mse_scores.npy', BEST_MSES)
+np.save('./data/1b_2/auto/best_mse_history.npy', BEST_MSE_HIST)
+np.save('./data/1b_2/auto/best_idxs.npy', BEST_IDXS)
+np.save('./data/1b_2/auto/all_mses_7.npy', ALL_MSES)
+np.save('./data/1b_2/auto/all_mse_hist_7.npy', ALL_MSE_HIST)
 
 print("...BEST MSES...\n", BEST_MSES)
 print("...BEST IDXS...\n", BEST_IDXS)

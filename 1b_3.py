@@ -30,8 +30,8 @@ Y_data = Y_data.reshape(Y_data.shape[0], 1)
 X_train, X_test, y_train, y_test = train_test_split(X_data, Y_data, test_size=0.3, shuffle=True, random_state=seed)
 
 # scale both, no CV here
-X_train = norm_scale(X_train)
-X_test = norm_scale(X_test)
+X_train = norm_scale(X_train, X_train)
+X_test = norm_scale(X_test, X_train)
 
 ############################################# handling dataset #############################################
 X_train_all = X_train
@@ -148,4 +148,4 @@ mse_array = [history.history['val_mse'] for history in histories]
 names = ['3_layer', '4_layer_dropout', '4_layer_nodropout', '5_layer_dropout', '5_layer_nodropout']
 
 compare_more_models(mse_array, names, 'dropout_analysis_75_epochs', 'comparison: models with / without dropout',
-                        path='./figures/2a_3/')
+                        path='./figures/1b_3/')

@@ -30,8 +30,8 @@ Y_data = Y_data.reshape(Y_data.shape[0], 1)
 X_train, X_test, y_train, y_test = train_test_split(X_data, Y_data, test_size=0.3, shuffle=True, random_state=seed)
 
 # scale both, no CV here
-X_train = norm_scale(X_train)
-X_test = norm_scale(X_test)
+X_train = norm_scale(X_train, X_train)
+X_test = norm_scale(X_test, X_train)
 
 # create a network
 starter_model = keras.Sequential([
@@ -52,8 +52,8 @@ history =starter_model.fit(X_train, y_train,
                         validation_data=(X_test, y_test))
 
 # plot learning curves
-plot_loss(history.history, 'training_val_losses', 'mse', 'epochs vs mse losses', path='./figures/2a_1/')
-plot_predictions(starter_model, X_test, y_test, 50, 'predictions_targets_scatter', 'predictions and targets', path='./figures/2a_1/')
-plot_predictions(starter_model, X_test, y_test, 50, 'predictions_targets_line', 'predictions and targets', scatter=False,path='./figures/2a_1/')
+plot_loss(history.history, 'training_val_losses', 'mse', 'epochs vs mse losses', path='./figures/1b_1/')
+plot_predictions(starter_model, X_test, y_test, 50, 'predictions_targets_scatter', 'predictions and targets', path='./figures/1b_1/')
+plot_predictions(starter_model, X_test, y_test, 50, 'predictions_targets_line', 'predictions and targets', scatter=False,path='./figures/1b_1/')
 
 print(history.history['val_mse'])
