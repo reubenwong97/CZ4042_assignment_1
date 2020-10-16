@@ -18,7 +18,7 @@ NUM_NEURONS = [5, 10, 15, 20, 25]
 
 # validation loss stabalises at around 250 epochs -> 300 epochs for plotting
 epochs = 300
-batch_size = 32
+batch_size = 8
 seed = 10
 
 np.random.seed(seed)

@@ -17,7 +17,7 @@ NUM_CLASSES = 3
 # validation loss stabalises at around 250 epochs -> 500 epochs for plotting
 epochs = 500
 num_neurons = 10
-batch_size = 32
+batch_size = 8
 weight_decay = 10e-6
 seed = 10
 
